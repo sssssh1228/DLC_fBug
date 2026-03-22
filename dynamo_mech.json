@@ -1,0 +1,6 @@
+{
+  "Graph break": "Termination of tracing when Dynamo encounters unsupported control flow, Python syntax, or third-party library calls. Dynamo saves the current FX graph, restores local context, hands control back to the Python interpreter, then resumes tracing to build the next graph.",
+  "Symbolic execution": "Step-by-step symbolic bytecode execution of a Python program, where Dynamo wraps tensors as proxies, propagates them through each opcode, and records tensor computations as nodes to build the FX graph.",
+  "Guards": "Pytorch runtime predicts attached to a compiled graph that validates inputs, object identities, types, shapes, strides, control-flow–relevant values, and other observable program states.",
+  "Side-effect": "Modeling, tracking, and preserving observable state changes (e.g., mutations, aliasing, RNG/global state, I/O) so compiled execution matches eager semantics."
+}

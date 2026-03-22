@@ -1,0 +1,40 @@
+Submitted issues:
+150765
+175604
+175610
+175841
+176252
+176596
+176693
+174050
+174166
+175608
+175615
+175846
+175855
+175857
+175943
+175953
+176156
+176599
+176679
+176686
+176692
+176851
+176854
+
+Comfirmed bugs:
+176596	torch.compile does not correctly invoke property setter during object initialization	1.1
+150765	torch.compile failed to handle a custom __delattr__ method correctly	1.3
+174050	torch.compile produce inconsistent results when user overrides Python magic methods __class__	1.3
+175841	torch.compile crashes with InternalTorchDynamoError (RecursionError)	1.3
+176679	torch.compile produces incorrect results with Tensor subclass using __torch_function__	1.3
+176686	Tensor subclass using __torch_function__ produce wrong results with torch.compile	1.3
+175610	torch.compile crashes with InternalTorchDynamoError: AttributeError when tracing generator iteration over tensor subclass	3
+174166	torch.compile does not support Python try/except	5.2
+175608	torch.compile fails to trace try-except semantic and throw RuntimeError	5.2
+175846	torch.compile crashes with NotImplementedError when passing user-defined class to torch op inside try/except	5.2
+175857	torch.compile crashes with "Guard failed on same frame" when user audit hook monitors exec	5.4
+175953	torch.set_default_device are ignored by torch.compile	5.4
+176851	[regression] torch.compile does not recompile when class attribute is mutated between calls	6.1
+176854	torch.compile does not correctly propagate detach_() in-place autograd semantics	6.2

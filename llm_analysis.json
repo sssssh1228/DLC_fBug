@@ -1,0 +1,714 @@
+[
+  {
+    "issue_id": 154707,
+    "analysis": "{\n\"trigger_mechanism\": \"altering compiler options between invocations\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Configuration changes induce recompilation without guard attribution, causing repeated compile overhead and confusing empty guard messages.\"\n}"
+  },
+  {
+    "issue_id": 150765,
+    "analysis": "{\n\"trigger_mechanism\": \"overriding a magic method in a class\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Custom attribute mutation handler is ignored due to incomplete side-effect modeling, leading to mismatched object state.\"\n}"
+  },
+  {
+    "issue_id": 155841,
+    "analysis": "{\n\"trigger_mechanism\": \"wrapping a method with a function decorator\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Method decoration hides binding semantics; Dynamo models it as a plain function call, dropping self and raising argument mismatch.\"\n}"
+  },
+  {
+    "issue_id": 154490,
+    "analysis": "{\n\"trigger_mechanism\": \"accessing changing attribute used as static parameter\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Attribute value specialization installs equality guards; changing values cause repeated recompilation instead of symbolic handling.\"\n}"
+  },
+  {
+    "issue_id": 153605,
+    "analysis": "{\n\"trigger_mechanism\": \"exception from attribute access in try-except\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Attribute resolution during graph capture bypasses try/except, causing unhandled AttributeError instead of falling back.\"\n}"
+  },
+  {
+    "issue_id": 130557,
+    "analysis": "{\n\"trigger_mechanism\": \"calling unmodeled method on a built-in container\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Unmodeled container method in symbolic execution causes compilation failure.\"\n}"
+  },
+  {
+    "issue_id": 154820,
+    "analysis": "{\n  \"trigger_mechanism\": \"stateful tensor mutation across differentiation phases\",\n  \"root_cause\": \"Side-effect\",\n  \"symptom\": \"inconsistency\",\n  \"summary\": \"Compiler merges or reorders forward/backward mutations, breaking expected sequencing due to flawed side-effect modeling of autograd state.\"\n}"
+  },
+  {
+    "issue_id": 150711,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating attributes on a wrapped object\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Wrapper around compiled module fails to propagate dynamic attribute changes; attribute removal later raises, breaking offload orchestration.\"\n}"
+  },
+  {
+    "issue_id": 150110,
+    "analysis": "{\n\"trigger_mechanism\": \"returning a container view object\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Python mapping view is modeled as a tuple during compilation, yielding inconsistent results.\"\n}"
+  },
+  {
+    "issue_id": 150702,
+    "analysis": "{\n\"trigger_mechanism\": \"changing dimension equality across runs\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Shape-derived scalar arithmetic induces overspecialized guards; changing resolution breaks constraints and forces recompilation under dynamic shape.\"\n}"
+  },
+  {
+    "issue_id": 155057,
+    "analysis": "{\n\"trigger_mechanism\": \"resetting global compiler state then reusing compiled callable\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Resetting compiler caches leaves compiled function holding stale references; untracked global state mutation causes use-after-free and crash.\"\n}"
+  },
+  {
+    "issue_id": 156054,
+    "analysis": "{\n\"trigger_mechanism\": \"using call-time hooks that capture external objects via closures\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Hook closures cause over-guarding of captured state, increasing guard evaluation latency during compiled graph cache checks.\"\n}"
+  },
+  {
+    "issue_id": 156720,
+    "analysis": "{\n\"trigger_mechanism\": \"passing dynamic tensor scalars in shape-defining list\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Scalar tensor shape parameters in containers aren't converted to symbolic integers, breaking fake-tensor execution during graph building and causing failure.\"\n}"
+  },
+  {
+    "issue_id": 141196,
+    "analysis": "{\n\"trigger_mechanism\": \"runtime feature flag alters configuration kwargs handling under compilation\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Compilation-aware branch skips config sanitization; leftover kwargs cause model validation to raise an error unlike eager.\"\n}"
+  },
+  {
+    "issue_id": 155426,
+    "analysis": "{\n\"trigger_mechanism\": \"returning list output from function\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"List outputs require an unflatten helper marked untraceable; fullgraph disallows graph breaks, triggering a crash.\"\n}"
+  },
+  {
+    "issue_id": 147840,
+    "analysis": "{\n\"trigger_mechanism\": \"compiling external function object\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Pre-dispatch inlining/skip classification mislabels a standalone function, triggering an assertion crash.\"\n}"
+  },
+  {
+    "issue_id": 131975,
+    "analysis": "{\n\"trigger_mechanism\": \"changing object metadata flag within effect-suppressing context\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Preemptive guards consider gradient flags; toggling them inside effect-suppressed scope needlessly invalidates the graph causing recompilation.\"\n}"
+  },
+  {
+    "issue_id": 133762,
+    "analysis": "{\n\"trigger_mechanism\": \"overriding operator method on tuple-like subclass\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Operator dispatch for user-defined tuple-like objects is simplified to built-in tuple semantics during compilation, ignoring overridden methods.\"\n}"
+  },
+  {
+    "issue_id": 120799,
+    "analysis": "{\n\"trigger_mechanism\": \"decorated method call via instance binding\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Descriptor binding for methods mis-modeled during bytecode tracing, causing instance to be returned instead of expected class result.\"\n}"
+  },
+  {
+    "issue_id": 133063,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating container during generator iteration\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Compiler misinterprets generator evaluation order, ignoring interleaved container state updates.\"\n}"
+  },
+  {
+    "issue_id": 149406,
+    "analysis": "{\n\"trigger_mechanism\": \"varying primitive literal argument across calls\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Literal scalar inputs become constant-folded, producing strict value guards that recompile when the value changes across invocations.\"\n}"
+  },
+  {
+    "issue_id": 150540,
+    "analysis": "{\n\"trigger_mechanism\": \"asserting relation between computed value and tensor dimension\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Relational shape constraint captured only as a guard isn't propagated to symbolic analysis, causing data-dependent guard failure during compilation.\"\n}"
+  },
+  {
+    "issue_id": 137476,
+    "analysis": "{\n\"trigger_mechanism\": \"assigning bound method from another instance\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Method copied between instances produces __self__ mismatch that Dynamo's bound-method modeling can't handle, causing compilation failure.\"\n}"
+  },
+  {
+    "issue_id": 147162,
+    "analysis": "{\n\"trigger_mechanism\": \"using immutable mapping view in argument binding\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Inline introspection yields a mappingproxy container Dynamo can’t model, triggering a graph break and fullgraph compilation abort.\"\n}"
+  },
+  {
+    "issue_id": 149840,
+    "analysis": "{\n\"trigger_mechanism\": \"string truthiness in conditional gating\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"String-valued environment flag evaluated truthy, disabling compilation pre-dispatch regardless of intended 0/false setting.\"\n}"
+  },
+  {
+    "issue_id": 107143,
+    "analysis": "{\n\"trigger_mechanism\": \"introspecting subclass list for a locally defined class\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Local dynamic subclass plus subclass introspection triggers global-name guards that can’t resolve the class, leading to a crash.\"\n}"
+  },
+  {
+    "issue_id": 138157,
+    "analysis": "{\n\"trigger_mechanism\": \"attribute lookup on partially initialized instance\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Wrapper attribute resolution assumes internal fields exist; pre-init attribute queries recurse endlessly, causing a crash.\"\n}"
+  },
+  {
+    "issue_id": 139222,
+    "analysis": "{\n\"trigger_mechanism\": \"reusing compiled method across instances with varying parameter shapes\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Graph specialization to static parameter shapes fails when invoked on layers with mismatched shapes, triggering runtime assertion.\"\n}"
+  },
+  {
+    "issue_id": 135344,
+    "analysis": "{\n\"trigger_mechanism\": \"accessing descriptor-backed property on an instance\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Descriptor property semantics are mis-modeled; inlining binds incorrect arguments, causing an argument mismatch during compilation.\"\n}"
+  },
+  {
+    "issue_id": 152162,
+    "analysis": "{\n\"trigger_mechanism\": \"in-place attribute reassignment across tensor dtype\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Changing dtype via attribute mutation is mis-modeled, causing fake set_ to error during compilation.\"\n}"
+  },
+  {
+    "issue_id": 150994,
+    "analysis": "{\n\"trigger_mechanism\": \"overridden attribute access in nested object\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Compiler fails to model custom attribute resolution, hitting sourceless builder unsupported type and aborting graph compilation.\"\n}"
+  },
+  {
+    "issue_id": 153607,
+    "analysis": "{\n\"trigger_mechanism\": \"loading attribute yields callable missing expected name metadata\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"During symbolic attribute access, Dynamo expects __name__ on callables; a non-Python callable lacks it, triggering an exception.\"\n}"
+  },
+  {
+    "issue_id": 129820,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating a tensor via output argument with mismatched shape\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Compiler fails to model implicit resize from output-argument mutation, returning original buffer shape instead of eager's resized scalar.\"\n}"
+  },
+  {
+    "issue_id": 147776,
+    "analysis": "{\n\"trigger_mechanism\": \"graph break inside with statement\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Misordered handling of with-block stack during bytecode emulation causes re-entrance failure when a graph break occurs, leading to crash.\"\n}"
+  },
+  {
+    "issue_id": 147777,
+    "analysis": "{\n\"trigger_mechanism\": \"deleting decorated object leads to identity reuse\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Identity-keyed registry persists across deletions; reused id marks new object incorrectly, altering in-graph classification and compiled graph behavior.\"\n}"
+  },
+  {
+    "issue_id": 142357,
+    "analysis": "{\n\"trigger_mechanism\": \"using user-defined context manager\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Context manager handling resets global warning state, causing repeated warnings during compiled execution versus eager.\"\n}"
+  },
+  {
+    "issue_id": 141217,
+    "analysis": "{\n\"trigger_mechanism\": \"using subclass of built-in container\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dict subclass read-only operations not modeled during bytecode tracing, causing fullgraph compilation failure.\"\n}"
+  },
+  {
+    "issue_id": 144957,
+    "analysis": "{\n\"trigger_mechanism\": \"implicit type coercion during graph capture\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Implicit coercion during capture alters device placement semantics, diverging from eager execution.\"\n}"
+  },
+  {
+    "issue_id": 127173,
+    "analysis": "{\n\"trigger_mechanism\": \"temporarily replacing object attributes during method invocation\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Compiled execution reads original object state, ignoring temporary attribute substitutions, yielding non-functional results compared to eager behavior.\"\n}"
+  },
+  {
+    "issue_id": 134577,
+    "analysis": "{\n\"trigger_mechanism\": \"branching on attribute presence of dynamic input\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Compiler fails to model attribute-presence checks on tracked objects, causing an unsupported error during symbolic execution.\"\n}"
+  },
+  {
+    "issue_id": 150265,
+    "analysis": "{\n\"trigger_mechanism\": \"calling magic method on tensor subclass\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Tensor subclass loses tensor typing; operator modeled as generic object call, unsupported by Dynamo, causing graph break and compilation failure.\"\n}"
+  },
+  {
+    "issue_id": 144437,
+    "analysis": "{\n\"trigger_mechanism\": \"membership test on user-defined container\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Custom container membership relies on equality not modeled by Dynamo, causing unsupported comparison and failure under fullgraph execution.\"\n}"
+  },
+  {
+    "issue_id": 139374,
+    "analysis": "{\n\"trigger_mechanism\": \"binding non-constant object via partial application\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Introspection of a partially bound callable fails when bound value isn't constant, breaking Dynamo's bytecode modeling.\"\n}"
+  },
+  {
+    "issue_id": 149502,
+    "analysis": "{\n\"trigger_mechanism\": \"attaching global pre-invocation hooks to module methods\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Wrapper module introduced by compilation causes hooks to run twice, changing inputs and yielding different outputs.\"\n}"
+  },
+  {
+    "issue_id": 152012,
+    "analysis": "{\n\"trigger_mechanism\": \"exception raised within context manager\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Exception path in with-statement triggers exit returning raw None, violating VariableTracker invariants and crashing Dynamo's bytecode modeling.\"\n}"
+  },
+  {
+    "issue_id": 155246,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating list during generator evaluation\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"List mutation during generator iteration breaks side-effect tracking, corrupting shape association in fake execution and causing a channel mismatch crash.\"\n}"
+  },
+  {
+    "issue_id": 129673,
+    "analysis": "{\n\"trigger_mechanism\": \"in-place mutation of tensor rank/shape\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"In-place shape change on a tracked tensor breaks dynamic-shape guard generation, causing an index error and compile-time abort.\"\n}"
+  },
+  {
+    "issue_id": 125652,
+    "analysis": "{\n\"trigger_mechanism\": \"using per-instance state within compiled method\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Instance attributes are constant-specialized with identity guards, forcing recompilation per object and preventing cache sharing across layers.\"\n}"
+  },
+  {
+    "issue_id": 123771,
+    "analysis": "{\n\"trigger_mechanism\": \"decorator stacking with conflicting compilation directives\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamic eval-frame scoping ignores outer disable, allowing nested compilation to proceed and raise runtime errors.\"\n}"
+  },
+  {
+    "issue_id": 130917,
+    "analysis": "{\n\"trigger_mechanism\": \"converting graph value into a Python scalar\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Scalar extraction from tracked values isn't modeled; full-graph mode forbids breaks, leading to a compilation exception.\"\n}"
+  },
+  {
+    "issue_id": 128961,
+    "analysis": "{\n\"trigger_mechanism\": \"invoking magic method on a subclassed object\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Full-graph capture lacks modeling for subclass method dispatch, causing compilation to abort.\"\n}"
+  },
+  {
+    "issue_id": 140903,
+    "analysis": "{\n\"trigger_mechanism\": \"attribute access on tuple-record object\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Field access on a tuple-like record cannot be guarded, causing graph breaks during compilation.\"\n}"
+  },
+  {
+    "issue_id": 130559,
+    "analysis": "{\n\"trigger_mechanism\": \"decorator-based context manager in with-block\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Decorator-generated context manager is skipped; pre-dispatch context-handling gaps cause compilation to abort with Unsupported.\"\n}"
+  },
+  {
+    "issue_id": 138412,
+    "analysis": "{\n\"trigger_mechanism\": \"container of tensors passed to in-place operation\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Compilation mis-models list arguments for vectorized in-place op, causing FakeTensor dispatch to access attributes on lists.\"\n}"
+  },
+  {
+    "issue_id": 131265,
+    "analysis": "{\n\"trigger_mechanism\": \"in-place mutation of input tensor\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"timeout\",\n\"summary\": \"Input mutations invalidate capture assumptions, disabling CUDA graph capture under compilation and increasing execution time.\"\n}"
+  },
+  {
+    "issue_id": 142055,
+    "analysis": "{\n\"trigger_mechanism\": \"inequality using overridden equality semantics\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Dynamo mismodels Python rich comparison fallback, ignoring overridden equality when evaluating inequality, leading to wrong boolean result.\"\n}"
+  },
+  {
+    "issue_id": 135118,
+    "analysis": "{\n\"trigger_mechanism\": \"creating an unused class instance with constructor side-effects\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Constructor warning triggers graph break; resume mis-models object and reads missing attribute, causing crash.\"\n}"
+  },
+  {
+    "issue_id": 133253,
+    "analysis": "{\n\"trigger_mechanism\": \"built-in introspection for attribute presence\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Attribute presence checks on tensors are unsupported in bytecode modeling, causing an exception during tracing rather than graph break.\"\n}"
+  },
+  {
+    "issue_id": 141514,
+    "analysis": "{\n\"trigger_mechanism\": \"wrapping nested function with metadata-preserving decorator\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Nested function decoration causes Dynamo’s function reconstruction to fail during bytecode modeling, resulting in a compile-time crash.\"\n}"
+  },
+  {
+    "issue_id": 148040,
+    "analysis": "{\n\"trigger_mechanism\": \"declaring dynamic shape later constrained to constant\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamic dimension annotation conflicts with operator shape inference, leading guard generation to raise constraint violation and abort compilation.\"\n}"
+  },
+  {
+    "issue_id": 143425,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating global in nested closure via cross-module call\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Global mutation in nested call is not propagated across frames, due to per-frame global state tracking, yielding stale values.\"\n}"
+  },
+  {
+    "issue_id": 139167,
+    "analysis": "{\n\"trigger_mechanism\": \"shadowing method name with instance attribute\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Module method name shadowed by attribute breaks Dynamo's module introspection, causing a callable assumption to throw during graph construction.\"\n}"
+  },
+  {
+    "issue_id": 141118,
+    "analysis": "{\n\"trigger_mechanism\": \"class with multiple inheritance combining mapping and module\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Multiple inheritance causes object classified as module, not mapping; custom dict handling rejects, raising unsupported during bytecode modeling.\"\n}"
+  },
+  {
+    "issue_id": 144830,
+    "analysis": "{\n\"trigger_mechanism\": \"calling two-argument builtin on primitive value\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"A built-in call is treated as a string method, misbinding arguments and crashing during compilation.\"\n}"
+  },
+  {
+    "issue_id": 112260,
+    "analysis": "{\n\"trigger_mechanism\": \"toggling ambient context manager around compiled calls\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Ambient context changes lack guards; constant-folded autocast state persists across runs, yielding dtype mismatches versus eager execution.\"\n}"
+  },
+  {
+    "issue_id": 116264,
+    "analysis": "{\n\"trigger_mechanism\": \"calling synthesized constructor on decorated class instances\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Synthesized constructor is skipped during symbolic instantiation, leaving fields unset and causing attribute access to fail in comparisons.\"\n}"
+  },
+  {
+    "issue_id": 141431,
+    "analysis": "{\n\"trigger_mechanism\": \"using library predicate in control flow\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Unmodeled library predicate cannot be inlined, forcing graph break and failure.\"\n}"
+  },
+  {
+    "issue_id": 133529,
+    "analysis": "{\n\"trigger_mechanism\": \"higher-order transform wraps class static method call\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Staticmethod is misbound as a bound method under higher-order transforms, adding a spurious class argument and causing arity errors.\"\n}"
+  },
+  {
+    "issue_id": 145284,
+    "analysis": "{\n\"trigger_mechanism\": \"using object truthiness as branch condition\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamo truthiness handling calls user-defined methods on unspecialized modules, causing AttributeError from unmodeled initialization state.\"\n}"
+  },
+  {
+    "issue_id": 149509,
+    "analysis": "{\n\"trigger_mechanism\": \"library predicate returning boolean inside compiled region\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Vectorization with optional output axis forces a boolean library check, which Dynamo can't trace, causing a fullgraph break and failure.\"\n}"
+  },
+  {
+    "issue_id": 103913,
+    "analysis": "{\n\"trigger_mechanism\": \"decorating nested function via higher-order decorator\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Nested decorator with closures is unsupported in pre-dispatch, causing graph break and altered compilation behavior.\"\n}"
+  },
+  {
+    "issue_id": 141046,
+    "analysis": "{\n\"trigger_mechanism\": \"class attribute mutation within mode-dispatched method call\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Mode-based dispatch exposes class-level mutation; compiler lacks side-effect support for setattr under fullgraph, causing tracing to abort.\"\n}"
+  },
+  {
+    "issue_id": 128942,
+    "analysis": "{\n\"trigger_mechanism\": \"nested class definition in function\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Unmodeled class-construction bytecode forces graph break, interrupting compilation and altering expected full-graph execution.\"\n}"
+  },
+  {
+    "issue_id": 138224,
+    "analysis": "{\n\"trigger_mechanism\": \"custom attribute access in an object\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamic attribute access cannot be symbolically modeled, forcing graph breaks that error under fullgraph compilation.\"\n}"
+  },
+  {
+    "issue_id": 121966,
+    "analysis": "{\n\"trigger_mechanism\": \"context manager mutating global state during tracing\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Activation checkpoint's RNG state context introduces real tensors during AOT tracing, violating FakeTensor assumptions and failing compilation.\"\n}"
+  },
+  {
+    "issue_id": 141232,
+    "analysis": "{\n\"trigger_mechanism\": \"intercepting tensor methods through dynamic dispatch override\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dispatch override routes tensor method to unhandled C-extension builtin, causing Dynamo unsupported error and graph break.\"\n}"
+  },
+  {
+    "issue_id": 140464,
+    "analysis": "{\n\"trigger_mechanism\": \"reading mutable attribute during graph capture\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Attribute access on module is specialized as constant, missing guards, so post-compile mutations aren't reflected in compiled runs.\"\n}"
+  },
+  {
+    "issue_id": 152473,
+    "analysis": "{\n\"trigger_mechanism\": \"data-dependent dimension used in compile-time guard\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Data-derived dynamic shape introduces equality guard on a symbolic value that the guard system cannot resolve, aborting compilation.\"\n}"
+  },
+  {
+    "issue_id": 134954,
+    "analysis": "{\n\"trigger_mechanism\": \"calling with different instances of the same class\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Instance arguments trigger identity guards, blocking graph reuse and causing repeated compilation across equivalent modules.\"\n}"
+  },
+  {
+    "issue_id": 103615,
+    "analysis": "{\n\"trigger_mechanism\": \"decorating nested function inside compiled function\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Decorated inner function conflicts with whole-graph capture constraints, triggering unsupported operation failure at compile time.\"\n}"
+  },
+  {
+    "issue_id": 130791,
+    "analysis": "{\n\"trigger_mechanism\": \"extracting tensor dimensions into Python scalars\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Mis-modeled static shape for recurrent outputs inserts a singleton dimension, so constant-folded shape reads diverge from eager.\"\n}"
+  },
+  {
+    "issue_id": 138112,
+    "analysis": "{\n\"trigger_mechanism\": \"multiple closures capture and mutate same nonlocal variable\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Closure mutation tracking by source names fails when multiple closures share a cell, producing stale reads under compilation.\"\n}"
+  },
+  {
+    "issue_id": 145277,
+    "analysis": "{\n\"trigger_mechanism\": \"inequality comparison with None in control flow\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamo misinterprets None inequality, invoking overloaded comparison and failing to model control-flow predicate during graph building.\"\n}"
+  },
+  {
+    "issue_id": 144461,
+    "analysis": "{\n\"trigger_mechanism\": \"executing nested context alters global state observed by guards\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Benchmarking context mutates global casting state, violating Dynamo’s global-state guard and causing a RecompileError abort.\"\n}"
+  },
+  {
+    "issue_id": 136193,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating closure variable in callback\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Hook mutates captured list; incomplete side-effect and closure handling generates wrong graph wrapper, causing IndexError at runtime.\"\n}"
+  },
+  {
+    "issue_id": 128075,
+    "analysis": "{\n\"trigger_mechanism\": \"constructor override with parent delegation\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Tracing a delegated constructor triggers hash on a partially initialized instance, causing premature attribute access and failure.\"\n}"
+  },
+  {
+    "issue_id": 143756,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating object attribute dictionary via item assignment\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Direct attribute storage mutation via mapping write is unmodeled, causing a Dynamo graph break during compilation.\"\n}"
+  },
+  {
+    "issue_id": 133185,
+    "analysis": "{\n\"trigger_mechanism\": \"library triggers hidden builtin hook\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"timeout\",\n\"summary\": \"Unmodeled builtin invocation forces graph break, worsening performance in compiled class initialization.\"\n}"
+  },
+  {
+    "issue_id": 139183,
+    "analysis": "{\n\"trigger_mechanism\": \"magic dispatch inside a context manager\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Context-managed dispatch alters operation path; Dynamo fails to model it, misclassifies the call, and triggers a graph break.\"\n}"
+  },
+  {
+    "issue_id": 141111,
+    "analysis": "{\n\"trigger_mechanism\": \"in-place mutation of function argument inside callback\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Mutating backward inputs violates no-mutation modeling; functionalization detects mutation and aborts compilation with an assertion.\"\n}"
+  },
+  {
+    "issue_id": 147143,
+    "analysis": "{\n\"trigger_mechanism\": \"attribute introspection on partially wrapped module\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Unsupported guard source for wrapper-local state during attribute checks causes TorchDynamo to crash.\"\n}"
+  },
+  {
+    "issue_id": 131360,
+    "analysis": "{\n\"trigger_mechanism\": \"using lazy plugin discovery for backend listing\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Lazy backend registry initialization causes list_backends to omit entrypoint-defined backends until queried.\"\n}"
+  },
+  {
+    "issue_id": 128134,
+    "analysis": "{\n\"trigger_mechanism\": \"context-driven dtype changes between calls\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Variable dtypes from precision contexts invalidate dtype guards, forcing repeated recompilations and hurting performance.\"\n}"
+  },
+  {
+    "issue_id": 137061,
+    "analysis": "{\n\"trigger_mechanism\": \"vectorized mapping over input with varying batch dimension\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Constant guards on the mapped axis prevent dynamic shapes, forcing recompilation whenever the batch dimension size changes.\"\n}"
+  },
+  {
+    "issue_id": 134608,
+    "analysis": "{\n\"trigger_mechanism\": \"using a custom context manager with a with-statement\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamo cannot model SETUP_WITH for user-defined managers, causing a graph break and compilation abort.\"\n}"
+  },
+  {
+    "issue_id": 133554,
+    "analysis": "{\n\"trigger_mechanism\": \"implicit default device for newly instantiated scalar tensor\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Implicit device defaults during state mutation cause device mismatch unmodeled by compilation, leading to differing device placement at runtime.\"\n}"
+  },
+  {
+    "issue_id": 132629,
+    "analysis": "{\n\"trigger_mechanism\": \"instantiating a metaclass-defined mapping type\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Metaclass-based mapping class instantiation unsupported in Dynamo's call modeling, causing an Unsupported exception during compilation.\"\n}"
+  },
+  {
+    "issue_id": 151743,
+    "analysis": "{\n\"trigger_mechanism\": \"switching a boolean flag between calls\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Control-relevant flag not properly guarded, causing incompatible graph reuse and a stall at device synchronization.\"\n}"
+  },
+  {
+    "issue_id": 141669,
+    "analysis": "{\n\"trigger_mechanism\": \"in-place mutation inside user-defined differentiation routine\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Mutation tracking around custom autograd boundaries misflags leaf updates, causing compiled mode to reject code eager permits.\"\n}"
+  },
+  {
+    "issue_id": 127697,
+    "analysis": "{\n\"trigger_mechanism\": \"constructing tensor subclass then performing in-place initialization\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Tensor subclass creation traced as view; later in-place mutation trips autograd checks, aborting compilation.\"\n}"
+  },
+  {
+    "issue_id": 132986,
+    "analysis": "{\n\"trigger_mechanism\": \"invoking mutator method on wrapper object\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Wrapper fails to reflect underlying object's state mutations, leaving training flag unsynchronized.\"\n}"
+  },
+  {
+    "issue_id": 132609,
+    "analysis": "{\n\"trigger_mechanism\": \"attribute lookup on traced value in strict context\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Strict tracing disallows reading object gradient-state attributes in nested callbacks, causing compilation to abort.\"\n}"
+  },
+  {
+    "issue_id": 137456,
+    "analysis": "{\n\"trigger_mechanism\": \"returning closure that captures outer-scope variable\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Read-only closure inlining omits cell reconstruction, causing assertion when the captured environment escapes the compiled region.\"\n}"
+  },
+  {
+    "issue_id": 118531,
+    "analysis": "{\n\"trigger_mechanism\": \"boolean conversion on symbolic numeric values\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Python truthiness of dynamic values unsupported in bytecode modeling, causing compilation abort.\"\n}"
+  },
+  {
+    "issue_id": 118532,
+    "analysis": "{\n\"trigger_mechanism\": \"boolean coercion of tensor inputs\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Boolean truth testing on tensors unmodeled, causing Dynamo to abort during symbolic bytecode execution.\"\n}"
+  },
+  {
+    "issue_id": 119203,
+    "analysis": "{\n\"trigger_mechanism\": \"custom instance creation method in user-defined class\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Customized instance creation is mis-modeled during tracing, losing constructor-set attributes and yielding divergent behavior.\"\n}"
+  },
+  {
+    "issue_id": 141283,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating container using non-materialized iterator input\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Iterator-based container mutation unsupported; bytecode modeling can't unpack iterator elements, causing compilation to abort.\"\n}"
+  },
+  {
+    "issue_id": 128954,
+    "analysis": "{\n\"trigger_mechanism\": \"nested function chain overspecializes across stack frames\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"timeout\",\n\"summary\": \"Per-frame cache limits trigger continued inner-frame compilation, causing cascaded recompiles and excessive compile time.\"\n}"
+  },
+  {
+    "issue_id": 132551,
+    "analysis": "{\n\"trigger_mechanism\": \"accessing nonexistent attribute inside exception handling\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Absent attribute access fails to raise, breaking try/except control flow under compilation and altering computed constants.\"\n}"
+  },
+  {
+    "issue_id": 101154,
+    "analysis": "{\n\"trigger_mechanism\": \"device-dependent branching and global state mutation\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Environment introspection and RNG changes force graph breaks since side-effects and runtime queries aren’t modeled in-graph.\"\n}"
+  },
+  {
+    "issue_id": 140266,
+    "analysis": "{\n\"trigger_mechanism\": \"reading inherited attribute missing from class dictionary\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Guard creation assumes attribute in subclass __dict__, failing on inherited lazy attributes and aborting compilation.\"\n}"
+  },
+  {
+    "issue_id": 130301,
+    "analysis": "{\n\"trigger_mechanism\": \"invoking built-in conversion on user-defined object\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamo lacks modeling for built-in conversion on custom objects, marking it unsupported and aborting compilation.\"\n}"
+  },
+  {
+    "issue_id": 132561,
+    "analysis": "{\n\"trigger_mechanism\": \"mixing tensors and non-tensors in returned structure\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Output signature rewriting misclassifies mixed return types, asserting when tensors appear unexpectedly during export.\"\n}"
+  },
+  {
+    "issue_id": 135636,
+    "analysis": "{\n\"trigger_mechanism\": \"inlined subclass method under dynamic shape compilation\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Dynamic inlining produces unstable guard names, triggering guard failures and recompilation each run.\"\n}"
+  },
+  {
+    "issue_id": 138715,
+    "analysis": "{\n\"trigger_mechanism\": \"capturing multiple parameters with differing shapes\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Shape-specialized graph assumes equal sizes across captured parameters; insufficient guards allow mismatched shapes, causing assertion failure.\"\n}"
+  },
+  {
+    "issue_id": 131150,
+    "analysis": "{\n\"trigger_mechanism\": \"changing compilation settings across successive invocations\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Cache key omits configuration; stale graph reused despite option changes, yielding behavior inconsistent with requested settings.\"\n}"
+  },
+  {
+    "issue_id": 132476,
+    "analysis": "{\n\"trigger_mechanism\": \"reassigning a container attribute via slice then mutating\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Attribute container reassignment and subsequent mutation are not preserved, causing divergent object state under compilation.\"\n}"
+  },
+  {
+    "issue_id": 136257,
+    "analysis": "{\n\"trigger_mechanism\": \"subclassed container replaces module parameter mapping\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Custom parameter container isn’t modeled as constant, causing attribute resolution to graph-break and prevent compilation.\"\n}"
+  },
+  {
+    "issue_id": 130554,
+    "analysis": "{\n\"trigger_mechanism\": \"instantiating a dictionary subclass with implicit value factory\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Symbolic interpreter cannot model mapping subclass construction and implicit entry creation, leading to an unsupported call and abort.\"\n}"
+  },
+  {
+    "issue_id": 138077,
+    "analysis": "{\n\"trigger_mechanism\": \"branching on device-specific type string\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Mis-modeled type string for nonstandard devices causes wrong branch selection under compilation.\"\n}"
+  },
+  {
+    "issue_id": 132569,
+    "analysis": "{\n\"trigger_mechanism\": \"mismatched function signature and provided inputs\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Argument flattening miscounts positional parameters, indexing past available inputs during Dynamo export pre-dispatch analysis.\"\n}"
+  },
+  {
+    "issue_id": 105929,
+    "analysis": "{\n\"trigger_mechanism\": \"context manager overriding operator dispatch semantics\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Dynamic context dispatch overrides aren't captured; compiled graph bypasses mode-driven operator rewrites, causing behavior mismatch.\"\n}"
+  },
+  {
+    "issue_id": 132800,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating container with potential exception on missing key\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Exception-raising container mutation isn't modeled, causing graph breaks and failure under fullgraph compilation.\"\n}"
+  },
+  {
+    "issue_id": 115520,
+    "analysis": "{\n\"trigger_mechanism\": \"with-statement on user-defined context manager\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"User-defined context manager semantics aren't captured during symbolic bytecode execution, aborting compilation.\"\n}"
+  },
+  {
+    "issue_id": 134086,
+    "analysis": "{\n  \"trigger_mechanism\": \"reflecting container type and constructing new instance\",\n  \"root_cause\": \"Symbolic execution\",\n  \"symptom\": \"crash\",\n  \"summary\": \"Reflective container reconstruction confuses bytecode modeling; unsupported class access produces graph break and abort under fullgraph.\"\n}"
+  },
+  {
+    "issue_id": 134731,
+    "analysis": "{\n\"trigger_mechanism\": \"capturing closure variable in nested lambda\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Compiler fails to reconstruct closure cell variables from nested functions, aborting during inlining.\"\n}"
+  },
+  {
+    "issue_id": 128072,
+    "analysis": "{\n\"trigger_mechanism\": \"calling a builtin iterator with multiple iterables\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamo fails to model multi-iterable builtin iteration, yielding unsupported handler and fullgraph compilation abort.\"\n}"
+  },
+  {
+    "issue_id": 137764,
+    "analysis": "{\n\"trigger_mechanism\": \"replacing internal container with subclassed mapping type\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Custom mapping for module parameters is modeled as a MutableMappingVariable lacking method access, causing an attribute error during compilation.\"\n}"
+  },
+  {
+    "issue_id": 130776,
+    "analysis": "{\n\"trigger_mechanism\": \"creating and discarding object instance in loop\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Ephemeral objects invalidate guard-attached cache entries, triggering recompilation each call; inlining avoids object identity guards and stabilizes cache.\"\n}"
+  },
+  {
+    "issue_id": 138188,
+    "analysis": "{\n  \"trigger_mechanism\": \"invoking state-changing method on a wrapper object\",\n  \"root_cause\": \"Symbolic execution\",\n  \"symptom\": \"inconsistency\",\n  \"summary\": \"Mode switch on compiled wrapper doesn't update internal training state due to missing side-effect modeling.\"\n}"
+  },
+  {
+    "issue_id": 132165,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating module-global state via imported function calls\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Global state mutations in imported module are redundantly tracked, breaking Dynamo’s side-effect model with an assertion.\"\n}"
+  },
+  {
+    "issue_id": 122447,
+    "analysis": "{\n\"trigger_mechanism\": \"using tensor subclass with hidden state\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Flattening a subclass during fake analysis accesses missing attributes, causing compiler to abort.\"\n}"
+  },
+  {
+    "issue_id": 141646,
+    "analysis": "{\n\"trigger_mechanism\": \"tracing callback on offloaded tensor state\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Offloaded parameter appears empty during tracing; side-effect modeling fails, yielding gradient size mismatch and crash.\"\n}"
+  },
+  {
+    "issue_id": 133302,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating global map keyed by non-serializable value\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Caching by shape hits unsupported constant handling; Dynamo cannot serialize shape keys, causing assertion during code generation.\"\n}"
+  },
+  {
+    "issue_id": 132362,
+    "analysis": "{\n\"trigger_mechanism\": \"try/except around method call raising exception\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Constant folding ignores try/except semantics; exceptions during folding abort compilation, breaking intended catch-and-default behavior.\"\n}"
+  },
+  {
+    "issue_id": 136814,
+    "analysis": "{\n\"trigger_mechanism\": \"invoking a returned nested closure capturing outer variable\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Inlining a returned closure with captured variables mismanages translator hierarchy, causing attribute access failure during compilation.\"\n}"
+  },
+  {
+    "issue_id": 134844,
+    "analysis": "{\n\"trigger_mechanism\": \"attaching dynamic attribute to object and calling it\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"User-assigned attribute on an object isn't tracked; proxy lacks it, causing method lookup failure during compilation.\"\n}"
+  },
+  {
+    "issue_id": 124247,
+    "analysis": "{\n\"trigger_mechanism\": \"invoking method returning non-tensor value\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Converting a traced tensor to a non-tensor is unsupported during symbolic execution, causing a compilation crash.\"\n}"
+  },
+  {
+    "issue_id": 138489,
+    "analysis": "{\n\"trigger_mechanism\": \"deferred initialization changes object classification across traces\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Deferred initialization mutates module state between traces, invalidating speculation log and causing divergent inlining decisions and assertion failure.\"\n}"
+  },
+  {
+    "issue_id": 116835,
+    "analysis": "{\n\"trigger_mechanism\": \"stringifying function objects during introspection\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Function introspection via string conversion clashes with Dynamo's builtin modeling, causing unsupported error under fullgraph compilation.\"\n}"
+  },
+  {
+    "issue_id": 129362,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating captured object attributes post-compilation\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Compiled graph caches parameters; subsequent attribute reassignment isn't tracked, so later executions ignore updated state.\"\n}"
+  },
+  {
+    "issue_id": 129841,
+    "analysis": "{\n\"trigger_mechanism\": \"invoking compilation in a short-lived local scope\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Weak-referenced cache entries vanish after local scope ends, so cache introspection finds no entries.\"\n}"
+  },
+  {
+    "issue_id": 142024,
+    "analysis": "{\n\"trigger_mechanism\": \"broadcasted arithmetic with unknown symbolic dimension\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Fullgraph stride-based comparisons require guards; unbacked symbolic shapes can’t be validated, causing a compile-time exception.\"\n}"
+  },
+  {
+    "issue_id": 132692,
+    "analysis": "{\n\"trigger_mechanism\": \"capturing instance attribute in nested closure\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"crash\",\n\"summary\": \"Nested closure over module fields triggers guards; alternate guard path lacks manager initialization, causing assertion during guard creation.\"\n}"
+  },
+  {
+    "issue_id": 128065,
+    "analysis": "{\n\"trigger_mechanism\": \"dynamic class construction from instance type\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Variable tracking mis-models user-object instantiation, losing initialized attributes and causing AttributeError during compiled execution.\"\n}"
+  },
+  {
+    "issue_id": 112009,
+    "analysis": "{\n\"trigger_mechanism\": \"asserting non-Tensor property of tensor\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"A boolean check from a tensor method drives assert; Dynamo can't represent non-Tensor returns and aborts compilation.\"\n}"
+  },
+  {
+    "issue_id": 133303,
+    "analysis": "{\n\"trigger_mechanism\": \"registering autograd callback in submodule\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Module-level autograd callbacks trigger unsupported method modeling in Dynamo, causing graph breaks and exceptions without compiled autograd support.\"\n}"
+  },
+  {
+    "issue_id": 132222,
+    "analysis": "{\n\"trigger_mechanism\": \"calling operator with Python scalar argument\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Python scalar argument triggers ref decomposition that accesses nonexistent shape attribute.\"\n}"
+  },
+  {
+    "issue_id": 141375,
+    "analysis": "{\n\"trigger_mechanism\": \"attribute assignment on mutable mapping inside context manager\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Attribute mutation on mapping during context exceeds compiler bytecode modeling, causing compilation abort.\"\n}"
+  },
+  {
+    "issue_id": 111551,
+    "analysis": "{\n\"trigger_mechanism\": \"subscript access with composite key\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Tuple-key module indexing unsupported; Dynamo assumes primitive keys, asserts during indexing modeling and breaks compilation.\"\n}"
+  },
+  {
+    "issue_id": 103831,
+    "analysis": "{\n\"trigger_mechanism\": \"iterating a user-defined iterable module\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"User-defined iterable module not supported by Dynamo iter modeling, causing an assertion during sequence unpack.\"\n}"
+  },
+  {
+    "issue_id": 128059,
+    "analysis": "{\n\"trigger_mechanism\": \"entering user-defined context manager during compilation\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Inlining policy skips context manager methods, leading Unsupported exception and compilation abort.\"\n}"
+  },
+  {
+    "issue_id": 121619,
+    "analysis": "{\n\"trigger_mechanism\": \"scalar arguments with an out-parameter\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Out-argument side-effect modeling with scalars produces a CPU result, causing a copy-to-meta failure during fake execution.\"\n}"
+  },
+  {
+    "issue_id": 113443,
+    "analysis": "{\n\"trigger_mechanism\": \"checking attribute existence on user-defined object\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Hasattr on custom objects triggers graph breaks; explain underreports breaks, yielding inconsistent diagnostic outputs.\"\n}"
+  },
+  {
+    "issue_id": 123202,
+    "analysis": "{\n\"trigger_mechanism\": \"extracting scalar value before iterative state mutation\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Initial loss scalar is specialized; later optimizer updates are ignored, yielding equal initial and final values.\"\n}"
+  },
+  {
+    "issue_id": 131154,
+    "analysis": "{\n\"trigger_mechanism\": \"graph break inside nested casting and autograd contexts\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Autocast state not preserved across a graph break in compiled autograd, producing an invalid dtype object and internal error.\"\n}"
+  },
+  {
+    "issue_id": 118072,
+    "analysis": "{\n\"trigger_mechanism\": \"context-managed global state mutation\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Context-managed RNG state changes aren’t tracked; missing source metadata triggers a TorchDynamo assertion during compilation.\"\n}"
+  },
+  {
+    "issue_id": 130087,
+    "analysis": "{\n\"trigger_mechanism\": \"evaluating built-in identity in conditional\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamo lacks modeling for object identity queries, so conditional control-flow cannot be compiled and compilation aborts.\"\n}"
+  },
+  {
+    "issue_id": 129742,
+    "analysis": "{\n\"trigger_mechanism\": \"attribute presence check on tracked tensor object\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Attribute existence checks on tensors aren’t modeled, causing Unsupported during symbolic bytecode execution and compilation failure.\"\n}"
+  },
+  {
+    "issue_id": 124477,
+    "analysis": "{\n\"trigger_mechanism\": \"indexing global dictionary during external library call\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Treating an external global mapping as constant mis-models getitem, triggering a KeyError and Dynamo compilation abort.\"\n}"
+  },
+  {
+    "issue_id": 124653,
+    "analysis": "{\n\"trigger_mechanism\": \"iteratively build broadcasted tensor across dimensions\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"timeout\",\n\"summary\": \"Value tracking fails to drop dead intermediates, emitting a redundant kernel and unused buffer.\"\n}"
+  },
+  {
+    "issue_id": 128944,
+    "analysis": "{\n\"trigger_mechanism\": \"iterating with higher-order lazy iterator in loop\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Higher-order iteration using lazy iterable isn't modeled in bytecode interpreter, causing graph break during compilation.\"\n}"
+  },
+  {
+    "issue_id": 121621,
+    "analysis": "{\n\"trigger_mechanism\": \"kwargs expansion with reserved identifier names\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Kwarg using a Python keyword is emitted unsanitized in FX source, producing invalid syntax and aborting compilation.\"\n}"
+  },
+  {
+    "issue_id": 134820,
+    "analysis": "{\n\"trigger_mechanism\": \"in-place mutation inside custom gradient wrapper\",\n\"root_cause\": \"Side-effect\",\n\"symptom\": \"crash\",\n\"summary\": \"Forward inlined without no-grad context mis-models autograd state; out-variant observes requires-grad tensors and raises during compilation.\"\n}"
+  },
+  {
+    "issue_id": 132237,
+    "analysis": "{\n\"trigger_mechanism\": \"attribute existence check on non-modeled module object\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamo lacks modeling for attribute tests on generic Python modules, raising Unsupported during bytecode tracing and aborting compilation.\"\n}"
+  },
+  {
+    "issue_id": 135329,
+    "analysis": "{\n\"trigger_mechanism\": \"attribute access returns mapping value\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamo mishandles dict attribute retrieval, wrapping returned dict as constant and asserting during compilation.\"\n}"
+  },
+  {
+    "issue_id": 144075,
+    "analysis": "{\n\"trigger_mechanism\": \"symbolic integer arithmetic in shape expressions\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"inconsistency\",\n\"summary\": \"Dynamic shape floor-division is mis-modeled, producing incorrect length expressions and mismatched guards.\"\n}"
+  },
+  {
+    "issue_id": 131439,
+    "analysis": "{\n\"trigger_mechanism\": \"passing nested function to higher-order call\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Nested user function variable lacks type info; argument validation expects python_type, causing compilation error during graph input creation.\"\n}"
+  },
+  {
+    "issue_id": 134451,
+    "analysis": "{\n\"trigger_mechanism\": \"accessing property-decorated attribute on a class\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Descriptor-backed class attribute treated as method during LOAD_ATTR, triggering assertion in TorchDynamo symbolic execution.\"\n}"
+  },
+  {
+    "issue_id": 114938,
+    "analysis": "{\n\"trigger_mechanism\": \"using non-fake-compatible operator during tracing\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"FakeTensor execution of an external kernel requires real allocation, causing Dynamo to fail during graph construction.\"\n}"
+  },
+  {
+    "issue_id": 128067,
+    "analysis": "{\n\"trigger_mechanism\": \"expanding mapping into function call keywords\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Keyword expansion requires dict merge/update; Dynamo lacks modeling for merging constant dicts with custom mappings, triggering an Unsupported error.\"\n}"
+  },
+  {
+    "issue_id": 132399,
+    "analysis": "{\n\"trigger_mechanism\": \"attribute introspection on tensor-like object inside differentiable path\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Built-in attribute checks on tensors in backward aren't modeled, causing compilation failure.\"\n}"
+  },
+  {
+    "issue_id": 117042,
+    "analysis": "{\n\"trigger_mechanism\": \"isinstance check on closure variable\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Type-checking a captured object requires modeled types; missing type metadata causes Dynamo to abort during bytecode handling.\"\n}"
+  },
+  {
+    "issue_id": 128319,
+    "analysis": "{\n\"trigger_mechanism\": \"mutating object attribute across successive calls\",\n\"root_cause\": \"Guards\",\n\"symptom\": \"timeout\",\n\"summary\": \"Attribute mutation causes value-equality guards and overspecialization, forcing repeated recompilation instead of symbolic handling.\"\n}"
+  },
+  {
+    "issue_id": 121386,
+    "analysis": "{\n\"trigger_mechanism\": \"using symbolic value in hash-based cache key\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Hashing symbolic shape values during tracing fails because symbolic integers are non-hashable, causing a compilation-time exception.\"\n}"
+  },
+  {
+    "issue_id": 111794,
+    "analysis": "{\n\"trigger_mechanism\": \"splitting traced graph across context manager boundaries\",\n\"root_cause\": \"Graph Break\",\n\"symptom\": \"crash\",\n\"summary\": \"Graph split ignores context manager stack, returning unmanaged context object and causing unsupported argument crash in downstream compilation.\"\n}"
+  },
+  {
+    "issue_id": 117026,
+    "analysis": "{\n\"trigger_mechanism\": \"type check on generator-produced iterator\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Iterator from a generator passed to a type check lacks compiler type info, aborting symbolic execution.\"\n}"
+  },
+  {
+    "issue_id": 125078,
+    "analysis": "{\n\"trigger_mechanism\": \"mixed scalar-tensor arithmetic under higher-order transform\",\n\"root_cause\": \"Symbolic execution\",\n\"symptom\": \"crash\",\n\"summary\": \"Dynamo mis-models mixed arithmetic, treating scalars as tensors; inserted tensor-only ops on scalars crash FakeTensor dispatch.\"\n}"
+  }
+]
