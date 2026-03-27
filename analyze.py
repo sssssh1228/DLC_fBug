@@ -12,12 +12,12 @@ def load_json(path):
 def classify_with_llm(issue_info, torch_taxonomy):
     user_prompt = f"""
 You are analyzing a PyTorch compilation bug related to the torch.compile / TorchDynamo pipeline.
-Your task is to describe this issue as a structured triplet:[Trigger Mechanism, Root Cause, Bug Symptom]
+Your task is to describe this issue as a structured triplet:[Trigger, Root Cause, Bug Symptom]
 
 This triplet should explain how a high-level Python language construct or usage pattern triggers a failure in TorchDynamo’s compilation or optimization logic, ultimately leading to an observable incorrect behavior at runtime.
 
 For a given PyTorch issue description, you must:
-1. Describe the Trigger Mechanism (≤10 words) to explain how a Python language construct or usage pattern triggers the bug.
+1. Describe the Trigger (≤10 words) to explain how a Python language construct or usage pattern triggers the bug.
 Keep the description abstract and structural (e.g., “capturing closure variable in loop”).
 Do not mention any specific functions, APIs, or concrete operations (avoid words like “delete”, “create”).
 2. Identify the primary root cause category from the provided Root Cause taxonomy. The root cause must reflect which compiler mechanism or modeling assumption fails.
@@ -42,8 +42,8 @@ for this issue:
 
 Expected output:
 {{
-"trigger_mechanism": "overide a magic function in a module",
-"optimization_strategy": "Symbolic execution",
+"trigger": "overide a magic function in a module",
+"root_cause": "Symbolic execution",
 "symptom": "inconsistency",
 "summary": "Custom attribute mutation semantics are ignored due to incomplete side-effect modeling during compilation."
 }}

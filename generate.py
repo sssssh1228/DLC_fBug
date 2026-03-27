@@ -6,7 +6,7 @@ LLM_TOKEN ="..."
 
 # ── Config ──────────────────────────────────────────────────────────────────
 EXCEL_PATH  = "bug_pattern.xlsx"
-OUTPUT_DIR  = "generated_cases_v5_claude_opus_4_6"
+OUTPUT_DIR  = "generated_cases"
 N_CASES     = 10
 # ────────────────────────────────────────────────────────────────────────────
 
@@ -29,12 +29,12 @@ Generate {N} test cases.
 """
 
     client = OpenAI(
-        base_url="https://api2.aigcbest.top/v1",
+        base_url="...",
         api_key=LLM_TOKEN,
     )
 
     response = client.chat.completions.create(
-        model="claude-opus-4-6-thinking",
+        model="gpt-5",
         messages=[
             {"role": "user", "content": user_prompt},
         ],
