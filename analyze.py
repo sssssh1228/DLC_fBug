@@ -75,7 +75,7 @@ Root Cause taxonomy:
 
 
 if __name__ == "__main__":
-    issues = load_json("raw_data.json")
+    issues = load_json("raw_issue_data.json")
 
     torch_tax_path = "dynamo_mech.json"
     torch_taxonomy = load_json(torch_tax_path)
