@@ -92,6 +92,18 @@ Generates new test cases  (Section 4.3) based on the bug taxonomy in `bug_patter
 
 ------
 
+### Examples
+
+#### `Fig2_example.py`
+
+The example shown in Figure 2 (`TorchDynamo Workflow`). It prints:
+
+- `Python Bytecode`: the raw CPython bytecode of `foo()` via `dis.dis()`
+- `TorchDynamo Analysis`: a breakdown of how `torch._dynamo.explain()` traces `foo()`
+- `Extracted FX Graphs`: `torch.fx.Graph` objects that TorchDynamo successfully captured
+
+---
+
 ## Methodology Summary
 
 ```
