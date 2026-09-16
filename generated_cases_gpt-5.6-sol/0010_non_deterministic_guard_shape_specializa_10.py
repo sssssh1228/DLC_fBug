@@ -1,0 +1,46 @@
+# -*- pattern-testcase -*-
+# root_cause : Guard Correctness
+# pattern    : Non-deterministic guard/shape specialization producing flaky compilation results
+# title      : Stride Specialization Determinism
+# sibling    : layout, stride, and contiguity specialization guards
+
+import torch
+from torch._dynamo.utils import counters
+
+# Sibling construct under test: layout, stride, and contiguity specialization guards.
+def fn(x):
+    transposed = x.permute(1, 0)
+    flattened = transposed.reshape(-1)
+    return flattened * 2.0 + flattened.sum()
+
+base = torch.arange(24.0).reshape(4, 6)
+inputs = [
+    base[:, ::2].clone(),
+    base[:, ::2],
+    torch.arange(12.0).reshape(3, 4).transpose(0, 1),
+    torch.arange(12.0).reshape(4, 3),
+]
+expected = [fn(x) for x in inputs]
+signatures = []
+baseline = None
+
+for _ in range(3):
+    torch._dynamo.reset()
+    counters.clear()
+    compiled = torch.compile(fn, backend="eager", dynamic=True)
+    actual = [compiled(x) for x in inputs]
+    for got, want in zip(actual, expected):
+        torch.testing.assert_close(got, want)
+    if baseline is None:
+        baseline = [value.clone() for value in actual]
+    else:
+        for got, first in zip(actual, baseline):
+            torch.testing.assert_close(got, first)
+    signatures.append((
+        counters["frames"].get("total", 0),
+        counters["frames"].get("ok", 0),
+        counters["stats"].get("calls_captured", 0),
+        counters["stats"].get("unique_graphs", 0),
+    ))
+
+assert signatures.count(signatures[0]) == len(signatures), signatures

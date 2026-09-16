@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Semantic Modeling Fidelity",
+    "root_cause": "TorchDynamo represents runtime Python values using a finite hierarchy of VariableTracker objects and interprets Python bytecode through symbolic execution on these abstractions. However, Python's dynamic object model and language semantics are substantially richer than this finite symbolic representation. When certain semantic behaviors are incompletely modeled or incorrectly approximated, the generated FX graph no longer faithfully represents the original program, producing outputs that diverge from CPython execution."
+  },
+  {
+    "name": "Guard Correctness",
+    "root_cause": "TorchDynamo specializes compiled graphs under a set of runtime assumptions captured as guards. Correct guard generation requires identifying exactly which runtime properties influence graph validity, while avoiding unnecessary specialization. Since determining the minimal sufficient guard set is inherently difficult, Dynamo may either omit required guards (under-guarding), causing stale graphs to be incorrectly reused, or generate overly restrictive guards (over-guarding), leading to excessive recompilation and performance degradation."
+  },
+  {
+    "name": "Side-Effect Tracking Fidelity",
+    "root_cause": "To maximize optimization opportunities, TorchDynamo captures only tensor computations in the FX graph while recording Python state mutations—including object attributes, mutable containers, global variables, tensor metadata, and other observable side effects—for deferred replay after graph execution. This design assumes that most Python side effects are independent of tensor computation. When hidden dependencies exist between deferred mutations and graph execution, reordering these operations may violate the original execution semantics, leading to incorrect results."
+  },
+  {
+    "name": "Graph Break Correctness",
+    "root_cause": "When encountering operations that cannot be symbolically captured (e.g., data-dependent control flow, unsupported Python constructs, or external native functions), TorchDynamo terminates graph capture and resumes execution in the Python interpreter. Maintaining correct execution across graph boundaries requires accurately preserving and restoring execution state. Since many runtime states are implicit and not designed for external serialization, incorrect state reconstruction may lead to crashes or semantic inconsistencies."
+  }
+]

@@ -1,0 +1,189 @@
+{
+  "Guard Correctness": {
+    "root_cause": "Guard Correctness",
+    "rounds": 1,
+    "patterns": [
+      {
+        "name": "Non-deterministic Guard Specialization",
+        "signature": "Guard generation or shape specialization decisions for tensor properties produce different results across identical runs, causing flaky compilation outcomes (varying op counts, recompilation counts, or intermittent constraint errors) without any change in inputs or code.",
+        "description": "The guard generation pipeline contains ordering-sensitive or state-dependent paths (e.g., dynamic shape source overrides, range bound computation, speculation state) that yield different specialization decisions across runs, making guards non-deterministic. This manifests as flaky tests with varying op counts, unexpected recompilation counts, or intermittent constraint/assertion errors.",
+        "fix_direction": "Stabilize guard generation by eliminating order-dependent state in shape specialization, canonicalizing dynamic shape source overrides, and ensuring deterministic range bound computation and speculation decisions during symbolic tracing.",
+        "parent": null
+      },
+      {
+        "name": "Non-deterministic guard specialization of symbolic shapes in higher-order op subgraph capture",
+        "signature": "A higher-order op (e.g., wrap) is compiled with dynamic shapes enabled, AND the guard system non-deterministically decides which symbolic shape expressions or shape-dependent variables to specialize/lift into the HOP subgraph across compilations, causing either inconsistent captured argument counts or outright compilation crashes.",
+        "description": "When tracing higher-order op subgraphs under dynamic shapes, the guard specialization logic does not deterministically resolve which symbolic size variables and shape-dependent free variables must be lifted as explicit arguments into the subgraph, producing flaky behavior where repeated compilations capture different numbers of arguments or crash due to mismatched guard assumptions.",
+        "fix_direction": "Make the guard generation and symbolic shape variable lifting logic for higher-order op subgraphs deterministic, ensuring a stable and consistent ordering and selection of which shape symbols and shape-dependent variables are specialized or lifted as subgraph arguments across compilations.",
+        "parent": "Non-deterministic Guard Specialization"
+      },
+      {
+        "name": "Stale function id()-keyed registry after deallocation/GC",
+        "signature": "A Dynamo registry or decorator tracking structure (allow_in_graph, polyfill, cache) uses the Python id() of a function object as its key; after the function is deallocated or the cache is reset, Python reuses the same address for a different object, causing stale entries to match the wrong function.",
+        "description": "Dynamo keying decorator/allow-in-graph/cache registries on function id() is unsafe because Python recycles memory addresses after deallocation. Stale registry entries then silently misapply to unrelated new function objects sharing the same id, causing infinite recursion, AttributeError, segfaults, or silent wrong behavior.",
+        "fix_direction": "Replace bare id()-keyed dictionaries with weakref-based mappings or identity-plus-epoch keys that are automatically invalidated when the original function is garbage-collected, ensuring no stale entry can match a newly-allocated object.",
+        "parent": null
+      },
+      {
+        "name": "Guard Construction Failure",
+        "definition": "The guard-building phase itself is wrong: guard generation crashes, omits a guard that should exist, or emits an invalid incorrect guard predicate, so the produced guard set is unsound from the start."
+      },
+      {
+        "name": "Guard Over-Specialization",
+        "definition": "Guards are generated too strictly (e.g. a dynamic dimension is specialized to a constant, or an over-narrow value/type guard), causing spurious recompilations or rejecting inputs that should have been accepted by the compiled code."
+      },
+      {
+        "name": "Guard Stale Reuse",
+        "definition": "A previously built guard or compiled artifact is cached and reused when it is no longer valid: the guard wrongly matches after the relevant state has changed, so an outdated compiled result is served."
+      }
+    ]
+  },
+  "Graph Break Correctness": {
+    "root_cause": "Graph Break Correctness",
+    "rounds": 1,
+    "patterns": [
+      {
+        "name": "Resume Codegen Crash on Graph Break Inside/Adjacent to Context Managers",
+        "signature": "A graph break occurs inside or adjacent to a with-block (context manager), and the resume function bytecode reconstruction crashes (typically KeyError) due to incorrect block stack ordering, exception table preservation, or block_target_offset_remap handling for the context manager's bookkeeping instructions.",
+        "description": "When a graph break triggers inside or near a context manager with-block, the resume codegen incorrectly reconstructs the bytecode needed to re-enter execution, mishandling block stack entries, exception table entries, and offset mappings for conditional or nested managers, especially on Python 3.11+.",
+        "fix_direction": "Fix resume bytecode transformation to correctly reconstruct block stack entries, exception table entries, and offset mappings for context manager with-blocks, including conditional branches and nested managers, ensuring the resume function faithfully reproduces the runtime state at the graph break point.",
+        "parent": "Resume Function Failure"
+      },
+      {
+        "name": "Skip/Disable-Decorated Function Graph Break Mishandling",
+        "signature": "A function marked as skipped (via trace_rules, torch.compiler.disable, or torch._dynamo.disable) is encountered during tracing, and the graph break logic either over-broadly classifies nested code objects as skippable, raises an uninformative or incorrect Unsupported error, or applies the wrong break policy (e.g., treating an intentional disable as a hard error under fullgraph=True).",
+        "description": "The skip/disable function detection at graph break boundaries incorrectly handles nested code objects, diagnostic messages, and disable-decorator semantics under different compilation modes, causing spurious breaks, uninformative crashes, or incorrect fullgraph enforcement.",
+        "fix_direction": "Refine the skip classification to exclude synthetic code objects (list comprehensions), allow custom reason messages on disable-triggered graph breaks, and treat torch.compiler.disable as an allowed break even under fullgraph=True.",
+        "parent": null
+      },
+      {
+        "name": "Resume Function Failure",
+        "description": "After a graph break, the generated resume (continuation) function is wrong: bytecode reconstruction, live-variable/state restoration, or control-flow stitching of the resumed frame is incorrect."
+      },
+      {
+        "name": "Graph-Break Decision Mistake",
+        "description": "Dynamo makes a wrong decision about whether / where to break the graph: it breaks when it should not, fails to break when it must, or breaks at an incorrect bytecode boundary."
+      }
+    ]
+  },
+  "Side-Effect Tracking Fidelity": {
+    "root_cause": "Side-Effect Tracking Fidelity",
+    "rounds": 1,
+    "patterns": [
+      {
+        "name": "HOP Subgraph Mutation Side-Effect Loss",
+        "signature": "A mutation side effect (variable assignment, attribute setattr, list append, or global write) occurs inside a higher-order operator subgraph (torch.cond, scan, checkpoint, nested_compile_region) and is either silently discarded, blocked with a graph break, or inconsistently recorded because the side-effect tracking checkpoint/restore across the HOP boundary does not propagate or preserve the mutation.",
+        "description": "When Dynamo traces a higher-order operator subgraph, mutations to outer-scope variables, module attributes, local mutable containers, or globals are not faithfully propagated back through the side-effect tracking system. This causes graph breaks, missing diagnostics, or silently dropped state changes depending on the specific HOP and mutation type.",
+        "fix_direction": "Ensure the side-effect tracking infrastructure (SideEffects checkpoint/restore, debug info propagation) correctly merges mutations from HOP subgraph tracing back into the outer graph's side-effect state, and surface clear error messages with HOP context when mutations cannot be supported.",
+        "parent": null
+      },
+      {
+        "name": "Global Mutable State Not Reset Between Tracing Sessions",
+        "signature": "A global mutable registry or table (e.g., kernel_side_table) retains entries from a prior tracing/test session, and a subsequent session misinterprets the stale entry (e.g., treating a builtin function as a triton kernel) because the side effect of populating the table was not tracked or reverted.",
+        "description": "Global singleton tables that accumulate side effects during tracing are not cleared or restored between invocations, causing stale entries (such as a builtin function left in kernel_side_table) to corrupt downstream serialization or execution in a later session.",
+        "fix_direction": "Ensure global mutable registries are properly reset at tracing-session or test boundaries, either via explicit cleanup, context-manager scoping, or by tracking table mutations as reversible side effects.",
+        "parent": null
+      },
+      {
+        "name": "Mutation Tracking Failure",
+        "definition": "An in-place mutation of program state (object attribute, container contents, global, etc.) is not correctly recorded or modeled, so the side effect is lost or mis-modeled relative to eager execution."
+      },
+      {
+        "name": "Replay Ordering Failure",
+        "definition": "Tracked side effects are replayed outside the graph in the wrong order or at the wrong time, so that the final observable program state diverges from eager even though each mutation was recorded."
+      },
+      {
+        "name": "Internal State Leak",
+        "definition": "Dynamo fails to properly restore or release internal and global states after tracing or execution, causing persistent state corruption, resource leaks, or unintended interference with subsequent executions."
+      }
+    ]
+  },
+  "Semantic Modeling Fidelity-1": {
+    "root_cause": "Semantic Modeling Fidelity-1",
+    "rounds": 1,
+    "patterns": [
+      {
+        "name": "Unsafe iteration over live mutable dict during VariableBuilder construction",
+        "signature": "VariableBuilder iterates a live Python dictionary (e.g., linecache.cache, module.__dict__) via get_items_from_dict without snapshotting it first, and the dict is concurrently or re-entrantly mutated during iteration, raising 'dictionary changed size during iteration' RuntimeError.",
+        "description": "When Dynamo's VariableBuilder wraps a mutable global or module-level dictionary into a ConstDictVariable, it iterates the live dict object directly. If that dict is modified during tracing (by the traced code itself, by lazy variable realization side effects, or by concurrent threads), the iteration crashes with a RuntimeError.",
+        "fix_direction": "Snapshot (shallow-copy) the dictionary's items before iterating in VariableBuilder/get_items_from_dict, so that mutations to the live dict during variable construction do not invalidate the iterator.",
+        "parent": null
+      },
+      {
+        "name": "SourcelessBuilder Type Coverage Gap",
+        "signature": "SourcelessBuilder.create() or VariableBuilder encounters unsupported Python type when wrapping user-defined object that lacks source for reconstruction",
+        "description": "Dynamo's SourcelessBuilder cannot represent certain Python types (custom descriptors, metaclasses, objects with magic methods) needed to reconstruct user-defined objects without source code. When these types appear in object attributes, defaults, or construction paths, tracing crashes.",
+        "fix_direction": "Add type support to SourcelessBuilder registry or use proper source-based reconstruction instead of sourceless building",
+        "parent": null
+      },
+      {
+        "name": "Iterator type falls back to UserDefinedObjectVariable",
+        "signature": "A built-in or stdlib iterator/iterable type (list_iterator, dict_valueiterator, dict_itemiterator, enumerate, generator, zip, itertools.count, etc.) is wrapped as UserDefinedObjectVariable instead of a specialized IteratorVariable subclass, causing __iter__ or __next__ calls to hit the unsupported-method path and produce a crash or graph break.",
+        "description": "Dynamo lacks a dedicated VariableTracker mapping for certain built-in and stdlib iterator types, so they are represented as generic UserDefinedObjectVariable which has no symbolic implementation of the iterator protocol (__iter__/__next__). Any compiled code that invokes the iterator protocol on these objects triggers an unsupported operation error.",
+        "fix_direction": "Register a specialized VariableTracker subclass (or extend an existing one such as IteratorVariable) for each missing iterator type, implementing symbolic __iter__ and __next__ methods that correctly model the iteration semantics.",
+        "parent": null
+      },
+      {
+        "name": "ConstantVariable missing Python value protocol",
+        "signature": "A ConstantVariable (or constant-handling path) is invoked for a standard Python protocol (truthiness, sequence unpacking, type identity) that the wrapped constant natively supports, but the Variable subclass does not implement, causing either a crash (NotImplementedError) or a semantic inconsistency.",
+        "description": "TorchDynamo's ConstantVariable wraps a Python constant but fails to expose one or more of its native protocols (bool coercion, iteration/sequence unpacking, isinstance identity), so operations that would succeed on the real Python object either raise NotImplementedError or produce a wrong result at trace time.",
+        "fix_direction": "Extend ConstantVariable (or the relevant variable type) to delegate the missing protocol to the underlying Python value, or reclassify the value into a more specific Variable subclass that already handles the protocol correctly.",
+        "parent": null
+      },
+      {
+        "name": "Missing VariableTracker",
+        "definition": "No suitable VariableTracker type exists to represent the encountered Python runtime entity, so Dynamo cannot construct a symbolic proxy for it at all."
+      },
+      {
+        "name": "Incorrect VariableTracker",
+        "definition": "A VariableTracker is constructed, but the wrong VT type is chosen or the entity is mapped to an inappropriate symbolic representation."
+      },
+      {
+        "name": "Incorrect VariableTracker Initialization",
+        "definition": "The correct VariableTracker type is chosen, but its initial symbolic state or metadata (e.g. shape, source, contents) is constructed incorrectly."
+      }
+    ]
+  },
+  "Semantic Modeling Fidelity-2": {
+    "root_cause": "Semantic Modeling Fidelity-2",
+    "rounds": 1,
+    "patterns": [
+      {
+        "name": "FakeTensor/Meta Kernel Semantic Divergence",
+        "signature": "FakeTensor dispatch or a meta/decomposition kernel rejects, crashes on, or returns incorrect metadata (device, dtype, strides, storage) for a tensor operation that eager mode executes successfully, due to missing or unfaithful abstract implementation of the op's semantics.",
+        "description": "The FakeTensor subsystem or registered meta kernels fail to faithfully replicate eager-mode behavior for specific tensor operations—including implicit device promotion, in-place device preservation, dtype-changing assignments, stride computation with memory format, and ops requiring real storage—causing crashes or silently wrong output metadata.",
+        "fix_direction": "Add or correct the op-specific FakeTensor/meta kernel implementation to match eager-mode semantics: register proper device inference rules, handle implicit type/device promotions, fix stride templates in meta functions, and add FakeTensor-compatible stubs for storage-level operations.",
+        "parent": null
+      },
+      {
+        "name": "Missing or Incomplete BuiltinVariable Handler for Python Builtin Call Form",
+        "signature": "A Python builtin function, constructor, method, or operator is invoked during Dynamo tracing with a specific call form (argument type, argument count, unbound-method syntax, or operator entry) and BuiltinVariable has no handler or its handler lacks dispatch coverage for that form, causing a crash or graph break.",
+        "description": "Dynamo's BuiltinVariable maintains an explicit handler registry for Python builtins; when a valid call variant is missing—whether an absent handler, a missing argument-count overload, a missing type-dispatch entry, or an unsupported calling convention—tracing fails with an Unsupported error or AttributeError instead of faithfully modeling the call.",
+        "fix_direction": "Add or extend the corresponding handler in BuiltinVariable (or related variable classes) to cover the missing call form, argument type, or operator entry, delegating to the appropriate Python dunder method or constant-folding where safe.",
+        "parent": "Missing Operation Handler"
+      },
+      {
+        "name": "NNModuleVariable Incomplete Symbolic Modeling of Module Operations",
+        "signature": "Python special methods, introspection operations, or module-specific methods on nn.Module instances (e.g. __len__, __delattr__, hasattr, .to(), hook registration) are not symbolically traced by NNModuleVariable/UnspecializedNNModuleVariable, causing graph breaks or incorrect eager evaluation.",
+        "description": "Dynamo's variable representations for nn.Modules lack symbolic modeling for various Python and module-level operations, leading Dynamo to either evaluate them directly against uninitialized state, refuse to handle them, or fail to model their return types.",
+        "fix_direction": "Extend NNModuleVariable to symbolically trace or properly handle the missing special methods and module operations, adding support for non-Tensor return types where needed.",
+        "parent": "Incorrect Dispatch"
+      },
+      {
+        "name": "Incorrect Scalar/SymInt Modeling During Symbolic Tracing",
+        "signature": "A torch op receives a Python scalar, scalar tensor, or unbacked symint argument that Dynamo's symbolic tracing cannot faithfully represent—missing an item() node, entering infinite recursion on scalar-to-tensor conversion, or misclassifying a data-dependent runtime assertion as a compile-time guard.",
+        "description": "Dynamo fails to correctly model the scalar-tensor boundary: implicit item() calls, scalar-to-tensor promotions, and data-dependent symbolic expressions are either dropped, recursed on, or incorrectly converted to guards, breaking semantic equivalence to eager execution.",
+        "fix_direction": "Ensure Dynamo explicitly inserts the appropriate FX node (item(), scalar_tensor, local_scalar_dense) or deferred runtime assertion for scalar/symint conversions, and correctly classifies data-dependent checks as graph-level constraints rather than compile-time guards.",
+        "parent": null
+      },
+      {
+        "name": "Missing Operation Handler",
+        "definition": "The VariableTracker is correct, but it lacks a handler/method for the attempted operation, so the operation cannot be symbolically processed."
+      },
+      {
+        "name": "Incorrect Dispatch",
+        "definition": "The operation on a correctly-constructed VariableTracker is dispatched to the wrong handler or produces incorrect in-graph symbolic semantics / an incorrect (or missing) FX node."
+      }
+    ]
+  }
+}
