@@ -1,7 +1,7 @@
 [
   {
     "issue_id": 144075,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Floor division in symbolic shape expression for arange output",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -9,7 +9,7 @@
   },
   {
     "issue_id": 144102,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Nested function deallocation causes Python id reuse in allow_in_graph tracking",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -17,7 +17,7 @@
   },
   {
     "issue_id": 144211,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Calling one_hot with out-of-range values under compile",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -25,7 +25,7 @@
   },
   {
     "issue_id": 144275,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Using pipe operator on types to create UnionType",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -33,7 +33,7 @@
   },
   {
     "issue_id": 144437,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Using `in` operator on user-defined container with custom __contains__",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -41,7 +41,7 @@
   },
   {
     "issue_id": 144461,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "ThroughputBenchmark threads corrupt global autocast dtype state",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -49,7 +49,7 @@
   },
   {
     "issue_id": 144787,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Running torch.compile inside active infra TorchDispatchMode context",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -57,7 +57,7 @@
   },
   {
     "issue_id": 144830,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling built-in format() with integer first argument",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -65,7 +65,7 @@
   },
   {
     "issue_id": 144868,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Stale comment references non-existent FUNC_INLINELIST symbol",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -73,7 +73,7 @@
   },
   {
     "issue_id": 144873,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Mutating user-defined object's __dict__ attribute",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -81,7 +81,7 @@
   },
   {
     "issue_id": 144874,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Setting attribute on a class/type object in compiled code",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -89,7 +89,7 @@
   },
   {
     "issue_id": 144906,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "truthiness check on nn.Module with custom __len__",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -97,7 +97,7 @@
   },
   {
     "issue_id": 144907,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Passing scalar tensor as fill value to torch.full",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -105,7 +105,7 @@
   },
   {
     "issue_id": 144908,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "fullgraph=True errors on graph breaks inside dynamo.disable regions",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -113,7 +113,7 @@
   },
   {
     "issue_id": 144957,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Passing numpy array to tensor.new_tensor under torch.compile",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -121,7 +121,7 @@
   },
   {
     "issue_id": 145053,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "nesting multiple torch.compile/optimize decorators on functions",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -129,7 +129,7 @@
   },
   {
     "issue_id": 145079,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "List comprehension in skip-marked file treated as skippable function",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -137,7 +137,7 @@
   },
   {
     "issue_id": 145226,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Using PEP585 generic type alias (e.g., list[Foo]) in annotations",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -145,7 +145,7 @@
   },
   {
     "issue_id": 145277,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Using != None comparison on tensor instead of is not None",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -153,7 +153,7 @@
   },
   {
     "issue_id": 145284,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Using sourceless unspecialized NN module as branch condition",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -161,7 +161,7 @@
   },
   {
     "issue_id": 145329,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Python random module state consumed by Dynamo internals during tracing",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -169,7 +169,7 @@
   },
   {
     "issue_id": 145334,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "AOT autograd cache hot load duplicates autotune artifacts",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -177,7 +177,7 @@
   },
   {
     "issue_id": 145346,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Graph break inside contextlib context manager with side effects",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -185,7 +185,7 @@
   },
   {
     "issue_id": 145446,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling C builtin bound method random.random in compiled function",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -193,7 +193,7 @@
   },
   {
     "issue_id": 145618,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Calling torch.compiler.disable-decorated function during tracing",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -201,7 +201,7 @@
   },
   {
     "issue_id": 145733,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Tensor subclass __tensor_flatten__ returns bound methods failing equality",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -209,7 +209,7 @@
   },
   {
     "issue_id": 145761,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Membership test on global set containing torch callable objects",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -217,7 +217,7 @@
   },
   {
     "issue_id": 145805,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Returning from advanced contextlib-decorated context manager",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -225,7 +225,7 @@
   },
   {
     "issue_id": 145926,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over mutable global dictionary during lazy variable realization",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -233,7 +233,7 @@
   },
   {
     "issue_id": 145927,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over mutable global cache dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -241,7 +241,7 @@
   },
   {
     "issue_id": 145928,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Global dictionary modified during iteration inside linecache tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -249,7 +249,7 @@
   },
   {
     "issue_id": 146008,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating mutable global dictionary during lazy variable realization",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -257,7 +257,7 @@
   },
   {
     "issue_id": 146009,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over a concurrently-mutating global dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -265,7 +265,7 @@
   },
   {
     "issue_id": 146010,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating global mutable dictionary that changes size during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -273,7 +273,7 @@
   },
   {
     "issue_id": 146011,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating globally-mutable linecache cache dict during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -281,7 +281,7 @@
   },
   {
     "issue_id": 146012,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary mutated during lazy variable realization and iteration",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -289,7 +289,7 @@
   },
   {
     "issue_id": 146013,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over concurrently mutated global dictionary during lazy realization",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -297,7 +297,7 @@
   },
   {
     "issue_id": 146014,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Concurrent modification of global dict during Dynamo's dict variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -305,7 +305,7 @@
   },
   {
     "issue_id": 146015,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Global mutable dict mutates during VariableBuilder iteration",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -313,7 +313,7 @@
   },
   {
     "issue_id": 146016,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over concurrently-mutated global dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -321,7 +321,7 @@
   },
   {
     "issue_id": 146017,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over globally-mutable dict during lazy variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -329,7 +329,7 @@
   },
   {
     "issue_id": 146023,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating global mutable dictionary during lazy variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -337,7 +337,7 @@
   },
   {
     "issue_id": 146024,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary mutates during VariableBuilder dict-wrapping iteration",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -345,7 +345,7 @@
   },
   {
     "issue_id": 146025,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over mutable global dictionary that changes during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -353,7 +353,7 @@
   },
   {
     "issue_id": 146026,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Mutable global dictionary changes size during variable builder iteration",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -361,7 +361,7 @@
   },
   {
     "issue_id": 146027,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over mutable global dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -369,7 +369,7 @@
   },
   {
     "issue_id": 146028,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over live dictionary that mutates during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -377,7 +377,7 @@
   },
   {
     "issue_id": 146029,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over concurrently-modified global dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -385,7 +385,7 @@
   },
   {
     "issue_id": 146030,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over externally-mutated global dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -393,7 +393,7 @@
   },
   {
     "issue_id": 146031,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over mutable global dictionary during linecache tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -401,7 +401,7 @@
   },
   {
     "issue_id": 146032,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating global cache dictionary that mutates during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -409,7 +409,7 @@
   },
   {
     "issue_id": 146033,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over globally-shared mutable dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -417,7 +417,7 @@
   },
   {
     "issue_id": 146076,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over a concurrently-mutated stdlib dict during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -425,7 +425,7 @@
   },
   {
     "issue_id": 146077,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating live global dictionary that mutates concurrently during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -433,7 +433,7 @@
   },
   {
     "issue_id": 146078,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary mutates during VariableBuilder iteration over its items",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -441,7 +441,7 @@
   },
   {
     "issue_id": 146079,
-    "trigger_type": "lazy",
+    "modeled_entity": "lazy",
     "trigger_description": "Lazy variable realization iterates a concurrently-mutating global dictionary",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -449,7 +449,7 @@
   },
   {
     "issue_id": 146080,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating global dictionary concurrently mutated during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -457,7 +457,7 @@
   },
   {
     "issue_id": 146081,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over a globally-shared mutable dict during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -465,7 +465,7 @@
   },
   {
     "issue_id": 146082,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary mutates during Dynamo's variable builder iteration",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -473,7 +473,7 @@
   },
   {
     "issue_id": 146083,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating mutable global dictionary during lazy variable realization",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -481,7 +481,7 @@
   },
   {
     "issue_id": 146122,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over globally mutable dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -489,7 +489,7 @@
   },
   {
     "issue_id": 146123,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary mutates during Dynamo's variable builder iteration",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -497,7 +497,7 @@
   },
   {
     "issue_id": 146124,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary modified during iteration in linecache during Dynamo tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -505,7 +505,7 @@
   },
   {
     "issue_id": 146125,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over mutable global dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -513,7 +513,7 @@
   },
   {
     "issue_id": 146136,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over concurrently-modified global dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -521,7 +521,7 @@
   },
   {
     "issue_id": 146137,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Global dictionary mutated during Dynamo variable builder iteration",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -529,7 +529,7 @@
   },
   {
     "issue_id": 146138,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over mutable dictionary during lazy variable realization",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -537,7 +537,7 @@
   },
   {
     "issue_id": 146139,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating global mutable dict during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -545,7 +545,7 @@
   },
   {
     "issue_id": 146146,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary mutated during Dynamo's iteration for variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -553,7 +553,7 @@
   },
   {
     "issue_id": 146147,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over a live dictionary that mutates during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -561,7 +561,7 @@
   },
   {
     "issue_id": 146148,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating global mutable dictionary that mutates during Dynamo tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -569,7 +569,7 @@
   },
   {
     "issue_id": 146149,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating globally shared mutable dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -577,7 +577,7 @@
   },
   {
     "issue_id": 146150,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary mutated during Dynamo's variable builder iteration",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -585,7 +585,7 @@
   },
   {
     "issue_id": 146162,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over mutable global dictionary during variable building",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -593,7 +593,7 @@
   },
   {
     "issue_id": 146163,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary mutated during Dynamo's VariableBuilder iteration over dict items",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -601,7 +601,7 @@
   },
   {
     "issue_id": 146164,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Global dictionary mutated during Dynamo's variable-building iteration",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -609,7 +609,7 @@
   },
   {
     "issue_id": 146165,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating over a global dict that mutates during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -617,7 +617,7 @@
   },
   {
     "issue_id": 146204,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dictionary mutated during VariableBuilder iteration over its entries",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -625,7 +625,7 @@
   },
   {
     "issue_id": 146205,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Global dict mutated during lazy variable builder dict iteration",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -633,7 +633,7 @@
   },
   {
     "issue_id": 146206,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Global linecache dict concurrently mutated during Dynamo tracing",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -641,7 +641,7 @@
   },
   {
     "issue_id": 146340,
-    "trigger_type": "iter",
+    "modeled_entity": "iter",
     "trigger_description": "Calling next() on a list_iterator passed as function argument",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -649,7 +649,7 @@
   },
   {
     "issue_id": 146344,
-    "trigger_type": "iter",
+    "modeled_entity": "iter",
     "trigger_description": "calling next() on dict.values() iterator",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -657,7 +657,7 @@
   },
   {
     "issue_id": 146346,
-    "trigger_type": "iter",
+    "modeled_entity": "iter",
     "trigger_description": "Calling next() on enumerate iterator passed as argument",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -665,7 +665,7 @@
   },
   {
     "issue_id": 146347,
-    "trigger_type": "iter",
+    "modeled_entity": "iter",
     "trigger_description": "Calling iter() on an enumerate object in compiled code",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -673,7 +673,7 @@
   },
   {
     "issue_id": 146348,
-    "trigger_type": "iter",
+    "modeled_entity": "iter",
     "trigger_description": "Calling iter() on a Python generator object in compiled code",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -681,7 +681,7 @@
   },
   {
     "issue_id": 146349,
-    "trigger_type": "iter",
+    "modeled_entity": "iter",
     "trigger_description": "Calling next() on dict.items() iterator in compiled function",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -689,7 +689,7 @@
   },
   {
     "issue_id": 146350,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling unbound string method via str.isalnum(c) syntax",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -697,7 +697,7 @@
   },
   {
     "issue_id": 146359,
-    "trigger_type": "iter",
+    "modeled_entity": "iter",
     "trigger_description": "calling iter() on a zip object passed as function argument",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -705,7 +705,7 @@
   },
   {
     "issue_id": 146360,
-    "trigger_type": "iter",
+    "modeled_entity": "iter",
     "trigger_description": "calling next() on zip iterator passed as function argument",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -713,7 +713,7 @@
   },
   {
     "issue_id": 146445,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Calling function wrapped with torch._dynamo.disable triggers uninformative graph break",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -721,7 +721,7 @@
   },
   {
     "issue_id": 146511,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Data-dependent conditional raise with unbacked symint from item()",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -729,7 +729,7 @@
   },
   {
     "issue_id": 146538,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Using `|` (or) operator to merge two dicts",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -737,7 +737,7 @@
   },
   {
     "issue_id": 146598,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Applying functools.cache/lru_cache decorator on compiled function",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -745,7 +745,7 @@
   },
   {
     "issue_id": 146688,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Bitwise binary operator on user-defined object with __and__",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -753,7 +753,7 @@
   },
   {
     "issue_id": 146932,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Accessing @property on in-graph tensor subclass returning SymInt",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -761,7 +761,7 @@
   },
   {
     "issue_id": 147030,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Export lifting nn module parameters as graph inputs",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -769,7 +769,7 @@
   },
   {
     "issue_id": 147143,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Accessing ignored submodule attributes within FSDP-wrapped model",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -777,7 +777,7 @@
   },
   {
     "issue_id": 147162,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Using types.MappingProxyType via inspect.signature.bind",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -785,7 +785,7 @@
   },
   {
     "issue_id": 147201,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling inspect.getfullargspec inside compiled code",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -793,7 +793,7 @@
   },
   {
     "issue_id": 147214,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Triton kernel called inside custom autograd Function.forward on ROCm",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -801,7 +801,7 @@
   },
   {
     "issue_id": 147281,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Passing a Python int scalar to torch.bucketize under compile",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -809,7 +809,7 @@
   },
   {
     "issue_id": 147440,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Passing dict.items() view object as input to compiled function",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -817,7 +817,7 @@
   },
   {
     "issue_id": 147565,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Non-reentrant checkpoint combined with ambient saved tensor hooks under compile",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -825,7 +825,7 @@
   },
   {
     "issue_id": 147632,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Missing introspection/debug APIs for compiled graph output",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -833,7 +833,7 @@
   },
   {
     "issue_id": 147776,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "context manager with statement causing graph break during resume",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -841,7 +841,7 @@
   },
   {
     "issue_id": 147777,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Python id reuse after function deletion misattributes decorator",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -849,7 +849,7 @@
   },
   {
     "issue_id": 147826,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Device string with index not parsed to extract device type",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -857,7 +857,7 @@
   },
   {
     "issue_id": 147840,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Passing torch in-graph function directly to torch.compile",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -865,7 +865,7 @@
   },
   {
     "issue_id": 147871,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Higher order operators generating side effects without debug info propagation",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -873,7 +873,7 @@
   },
   {
     "issue_id": 147913,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "encountering unsupported construct triggers poorly-messaged graph break",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -881,7 +881,7 @@
   },
   {
     "issue_id": 147946,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Invoking torch.compile on GIL-disabled Python build",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -889,7 +889,7 @@
   },
   {
     "issue_id": 148031,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Function id reuse after garbage collection misapplies Dynamo decorators",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -897,7 +897,7 @@
   },
   {
     "issue_id": 148032,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Function object id reuse after deallocation in decorator registry",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -905,7 +905,7 @@
   },
   {
     "issue_id": 148033,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Function object deallocation causes id reuse in decorator registry",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -913,7 +913,7 @@
   },
   {
     "issue_id": 148034,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Function object deallocation causes id reuse in decorator registry",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -921,7 +921,7 @@
   },
   {
     "issue_id": 148040,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Marking tensor dimension dynamic when operation coerces it static",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -929,7 +929,7 @@
   },
   {
     "issue_id": 148054,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Function id reuse after garbage collection triggers stale decorator lookup",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -937,7 +937,7 @@
   },
   {
     "issue_id": 148055,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Function id reuse after garbage collection triggers stale decorator lookup",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -945,7 +945,7 @@
   },
   {
     "issue_id": 148056,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Function object deallocation causes id() reuse in decorator registry",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -953,7 +953,7 @@
   },
   {
     "issue_id": 148068,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "torch._dynamo.disable context manager intermittently fails to suppress compilation",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -961,7 +961,7 @@
   },
   {
     "issue_id": 148093,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Global structured logging counter not reset between tests",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -969,7 +969,7 @@
   },
   {
     "issue_id": 148166,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Function id reuse after deallocation triggers stale decorator registration",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -977,7 +977,7 @@
   },
   {
     "issue_id": 148179,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Comparing list with non-list scalar using inequality operator",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -985,7 +985,7 @@
   },
   {
     "issue_id": 148201,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Calling mark_static on nested tensor's ragged symbolic dimension",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -993,7 +993,7 @@
   },
   {
     "issue_id": 148214,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Dynamic shape source override with non-deterministic guard specialization",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1001,7 +1001,7 @@
   },
   {
     "issue_id": 148215,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "marking tensor dims as unbacked under strict dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1009,7 +1009,7 @@
   },
   {
     "issue_id": 148216,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Non-deterministic guard failure reporting for dynamic tensor shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1017,7 +1017,7 @@
   },
   {
     "issue_id": 148217,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Guard failure callback not invoked on recompilation",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1025,7 +1025,7 @@
   },
   {
     "issue_id": 148218,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Dynamic shape source override causing flaky guard recompilation",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1033,7 +1033,7 @@
   },
   {
     "issue_id": 148250,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "torch.compile execution with missing optional numpy dependency",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1041,7 +1041,7 @@
   },
   {
     "issue_id": 148295,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Non-deterministic dynamic shape range bound computation during guard generation",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1049,7 +1049,7 @@
   },
   {
     "issue_id": 148296,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Integer binary operations on tensor shapes with flaky specialization",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1057,7 +1057,7 @@
   },
   {
     "issue_id": 148330,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "accessing sys.modules dictionary under dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1065,7 +1065,7 @@
   },
   {
     "issue_id": 148331,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Exporting function with default arguments under dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1073,7 +1073,7 @@
   },
   {
     "issue_id": 148349,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Passing tensor predicate to torch._check during compilation",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1081,7 +1081,7 @@
   },
   {
     "issue_id": 148368,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Non-deterministic intermediate variable naming in cond HOP graphs",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1089,7 +1089,7 @@
   },
   {
     "issue_id": 148369,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "binary operations on nn.Parameter shape attributes",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1097,7 +1097,7 @@
   },
   {
     "issue_id": 148390,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Exporting with dynamic shape constraints on untracked inputs",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1105,7 +1105,7 @@
   },
   {
     "issue_id": 148392,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Inplace binary operations on symbolic tensor shape integers",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1113,7 +1113,7 @@
   },
   {
     "issue_id": 148426,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Nested function calls producing empty graphs with dynamic shapes",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -1121,7 +1121,7 @@
   },
   {
     "issue_id": 148427,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Dynamic shapes cause non-deterministic variable capture in wrap op",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1129,7 +1129,7 @@
   },
   {
     "issue_id": 148428,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Accessing sys.modules global dictionary during tracing",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1137,7 +1137,7 @@
   },
   {
     "issue_id": 148442,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Accessing untracked global variable inside higher-order operation with dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1145,7 +1145,7 @@
   },
   {
     "issue_id": 148443,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "User-defined binary operator (__add__/__radd__) on custom class",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1153,7 +1153,7 @@
   },
   {
     "issue_id": 148463,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "set_stance decorator with graph break produces nondeterministic frame count",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1161,7 +1161,7 @@
   },
   {
     "issue_id": 148464,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Capturing untracked nonlocal variable in higher-order op with dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1169,7 +1169,7 @@
   },
   {
     "issue_id": 148475,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Catching RuntimeError from tensor op in try/except block",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1177,7 +1177,7 @@
   },
   {
     "issue_id": 148514,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "free variables captured in wrap op under dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1185,7 +1185,7 @@
   },
   {
     "issue_id": 148515,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Switching compilation stance between eager and compile modes",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1193,7 +1193,7 @@
   },
   {
     "issue_id": 148523,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "contextlib.contextmanager generator creation modifying globals across files",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1201,7 +1201,7 @@
   },
   {
     "issue_id": 148524,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Graph break occurring before contextlib context manager __enter__",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -1209,7 +1209,7 @@
   },
   {
     "issue_id": 148544,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "inlined functions with dynamic shapes in higher-order ops",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1217,7 +1217,7 @@
   },
   {
     "issue_id": 148558,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "nonlocal variable capture in wrap op with dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1225,7 +1225,7 @@
   },
   {
     "issue_id": 148606,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "nested tuple output in wrap higher-order op with dynamic shapes",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1233,7 +1233,7 @@
   },
   {
     "issue_id": 148624,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Captured variable deduplication in wrap with dynamic shapes",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1241,7 +1241,7 @@
   },
   {
     "issue_id": 148643,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Symbolic integer in slice inside higher-order wrap op",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1249,7 +1249,7 @@
   },
   {
     "issue_id": 148644,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Flaky recompilation with compilation stance context manager",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1257,7 +1257,7 @@
   },
   {
     "issue_id": 148665,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "wrap higher-order op with all kwargs under dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1265,7 +1265,7 @@
   },
   {
     "issue_id": 148787,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "`torch.compiler.disable(recursive=False)` mutates original function in-place",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1273,7 +1273,7 @@
   },
   {
     "issue_id": 148851,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Nested higher-order op capture with dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1281,7 +1281,7 @@
   },
   {
     "issue_id": 148870,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Lifting tensors sharing symbolic shape variables in higher-order ops",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1289,7 +1289,7 @@
   },
   {
     "issue_id": 148914,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "nested wrap higher-order op with dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1297,7 +1297,7 @@
   },
   {
     "issue_id": 148935,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Local list append side effect inside higher-order op with dynamic shapes",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1305,7 +1305,7 @@
   },
   {
     "issue_id": 148951,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Dynamic shape symbols inconsistently lifted into wrap higher-order op",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1313,7 +1313,7 @@
   },
   {
     "issue_id": 148952,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "In-place index_fill_ on channels_last memory format tensor",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -1321,7 +1321,7 @@
   },
   {
     "issue_id": 148961,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "wrap higher-order op with kwarg defaults under dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1329,7 +1329,7 @@
   },
   {
     "issue_id": 149000,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "higher-order wrap op with keyword arguments under dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1337,7 +1337,7 @@
   },
   {
     "issue_id": 149024,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "wrap higher-order op with keyword-only args under dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1345,7 +1345,7 @@
   },
   {
     "issue_id": 149079,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Wrap higher-order op with pytree kwargs under dynamic shapes",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1353,7 +1353,7 @@
   },
   {
     "issue_id": 149101,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Buffer donation with dynamic tensor shapes in AOT fallback",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1361,7 +1361,7 @@
   },
   {
     "issue_id": 149406,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Passing varying Python float arguments with dynamic=True",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1369,7 +1369,7 @@
   },
   {
     "issue_id": 149457,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "calling functional_call with module mutations inside HOP subgraph",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -1377,7 +1377,7 @@
   },
   {
     "issue_id": 149502,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Global module forward pre-hook fires extra on OptimizedModule wrapper",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1385,7 +1385,7 @@
   },
   {
     "issue_id": 149509,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "vmap out_dims set to None triggers is_batchedtensor call",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1393,7 +1393,7 @@
   },
   {
     "issue_id": 149519,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Compiling lazy module with deferred parameter materialization",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1401,7 +1401,7 @@
   },
   {
     "issue_id": 149520,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Lazy module defers parameter materialization until first forward pass",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1409,7 +1409,7 @@
   },
   {
     "issue_id": 149521,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Lazy module deferred parameter materialization during compiled forward pass",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1417,7 +1417,7 @@
   },
   {
     "issue_id": 149572,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "indirect state object workaround for former VariableTracker immutability",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -1425,7 +1425,7 @@
   },
   {
     "issue_id": 149574,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Accessing attribute on user-defined config class with custom __getattribute__",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1433,7 +1433,7 @@
   },
   {
     "issue_id": 149834,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Disabling compiler on nested module forward inside compiled region",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -1441,7 +1441,7 @@
   },
   {
     "issue_id": 149840,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Environment variable string \"0\" evaluated as truthy boolean",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -1449,7 +1449,7 @@
   },
   {
     "issue_id": 149877,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Custom autograd function apply emits unnecessary FunctionCtx node",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1457,7 +1457,7 @@
   },
   {
     "issue_id": 149881,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Creating a self-referential cyclic list and returning it",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1465,7 +1465,7 @@
   },
   {
     "issue_id": 149907,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "In-place view operation (transpose_) on graph input tensor",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -1473,7 +1473,7 @@
   },
   {
     "issue_id": 149920,
-    "trigger_type": "lazy",
+    "modeled_entity": "lazy",
     "trigger_description": "Lazy-tracked tuple variable used as dictionary key lookup",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1481,7 +1481,7 @@
   },
   {
     "issue_id": 149929,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "accessing functools.cached_property descriptor on user-defined object",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1489,7 +1489,7 @@
   },
   {
     "issue_id": 149964,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Tensor slicing operation triggers unexpected graph break",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1497,7 +1497,7 @@
   },
   {
     "issue_id": 149969,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Monkey-patching module forward with functools.partial triggers over-guarding",
     "root_cause_category": "Guard Correctness",
     "symptom": "timeout",
@@ -1505,7 +1505,7 @@
   },
   {
     "issue_id": 149971,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "calling builtin hash() on a user-defined object instance",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1513,7 +1513,7 @@
   },
   {
     "issue_id": 149975,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Tensor subclass method invocation triggers __torch_function__ during var_getattr",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1521,7 +1521,7 @@
   },
   {
     "issue_id": 149991,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "isinstance check on type with metaclass __instancecheck__",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1529,7 +1529,7 @@
   },
   {
     "issue_id": 149997,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Passing lambda as argument to torch._check function",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1537,7 +1537,7 @@
   },
   {
     "issue_id": 150005,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "converting tensor subclass to sequence via list()",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1545,7 +1545,7 @@
   },
   {
     "issue_id": 150064,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "torch._check with unbacked dynamic symbol dimensions",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1553,7 +1553,7 @@
   },
   {
     "issue_id": 150089,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Compiling a frozen TorchScript model missing standard attributes",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1561,7 +1561,7 @@
   },
   {
     "issue_id": 150110,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Returning dict.items() view object from compiled function",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1569,7 +1569,7 @@
   },
   {
     "issue_id": 150229,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "torch._check inside invoke_subgraph passed to fake tensor cache validation",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1577,7 +1577,7 @@
   },
   {
     "issue_id": 150265,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Arithmetic op on tensor subclass created via _make_subclass",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1585,7 +1585,7 @@
   },
   {
     "issue_id": 150435,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Calling function marked as skipped in trace_rules",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -1593,7 +1593,7 @@
   },
   {
     "issue_id": 150477,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Data-dependent branch inside user-defined context manager triggers frame skip",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -1601,7 +1601,7 @@
   },
   {
     "issue_id": 150540,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "`torch._check` on data-dependent expression converted to guard, dropped from graph",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1609,7 +1609,7 @@
   },
   {
     "issue_id": 150702,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Duck sizing unifies tensor dimensions with coincidentally equal sizes",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1617,7 +1617,7 @@
   },
   {
     "issue_id": 150711,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "calling delattr on torch.compile-wrapped nn.Module",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1625,7 +1625,7 @@
   },
   {
     "issue_id": 150765,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Overriding __delattr__ magic method on user-defined class",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1633,7 +1633,7 @@
   },
   {
     "issue_id": 150848,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Subclassing nn.Parameter without overriding __torch_function__ classmethod",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1641,7 +1641,7 @@
   },
   {
     "issue_id": 150994,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling super().__getattribute__() in custom __getattribute__ override",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1649,7 +1649,7 @@
   },
   {
     "issue_id": 151202,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "tensor factory function not dispatched through torch function mode",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1657,7 +1657,7 @@
   },
   {
     "issue_id": 151328,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Invoking torch.compile inside a custom op implementation",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1665,7 +1665,7 @@
   },
   {
     "issue_id": 151401,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Slicing named tuple return value of torch.linalg.lu",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1673,7 +1673,7 @@
   },
   {
     "issue_id": 151450,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "NN module method using contextlib context manager in skipfiles",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1681,7 +1681,7 @@
   },
   {
     "issue_id": 151670,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Mixed-device tensors passed to diagonal_scatter during FakeTensor tracing",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1689,7 +1689,7 @@
   },
   {
     "issue_id": 151737,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Adding CPU scalar tensor from indexing to CUDA tensor",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1697,7 +1697,7 @@
   },
   {
     "issue_id": 151743,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Recompiling on changed boolean constant for op lacking meta registration",
     "root_cause_category": "Guard Correctness",
     "symptom": "timeout",
@@ -1705,7 +1705,7 @@
   },
   {
     "issue_id": 152012,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Exception raised inside torch.autocast context manager",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1713,7 +1713,7 @@
   },
   {
     "issue_id": 152162,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Assigning `.data` attribute on tensor with different dtype",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1721,7 +1721,7 @@
   },
   {
     "issue_id": 152262,
-    "trigger_type": "iter",
+    "modeled_entity": "iter",
     "trigger_description": "Consuming iterator then calling next() on exhausted iterator",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -1729,7 +1729,7 @@
   },
   {
     "issue_id": 152307,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Skip-listed torch functions graph-break shared module forward code",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -1737,7 +1737,7 @@
   },
   {
     "issue_id": 152316,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling a method_descriptor lacking __module__ attribute during graph break",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -1745,7 +1745,7 @@
   },
   {
     "issue_id": 152374,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "FX graph cache hit bypasses debug trace artifact generation",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -1753,7 +1753,7 @@
   },
   {
     "issue_id": 152447,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "Graph break inside constructor leaves partially-initialized object for guards",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -1761,7 +1761,7 @@
   },
   {
     "issue_id": 152473,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "concatenating tensors with data-dependent unbacked symbolic dimensions",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1769,7 +1769,7 @@
   },
   {
     "issue_id": 152480,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Tracing through library functions using functools.lru_cache internally",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -1777,7 +1777,7 @@
   },
   {
     "issue_id": 153032,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Tuple addition with ConstantVariable in compiled autograd hook",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1785,7 +1785,7 @@
   },
   {
     "issue_id": 153045,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Registering module hook using nested closure variable capture",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -1793,7 +1793,7 @@
   },
   {
     "issue_id": 153058,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "CUDA Event created in graph, mutated, then exported via side effects",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -1801,7 +1801,7 @@
   },
   {
     "issue_id": 153059,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "registering same hook on multiple input tensors under compilation",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1809,7 +1809,7 @@
   },
   {
     "issue_id": 153100,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Registering intermediary hooks on nn modules under aot_eager compilation",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1817,7 +1817,7 @@
   },
   {
     "issue_id": 153120,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Serializing and deserializing guards for nn_module objects",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1825,7 +1825,7 @@
   },
   {
     "issue_id": 153129,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Binary `+` on tuple variable and constant triggers sequence unpack",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1833,7 +1833,7 @@
   },
   {
     "issue_id": 153141,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Binary `+` in hook closure misidentified as tuple concatenation",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1841,7 +1841,7 @@
   },
   {
     "issue_id": 153160,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Intermediate tensor hook capturing closure variables under compilation",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1849,7 +1849,7 @@
   },
   {
     "issue_id": 153207,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Changing nn_module hook identity triggers unnecessary recompilation",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1857,7 +1857,7 @@
   },
   {
     "issue_id": 153330,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Importing dynamo modules inside meta device context manager",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1865,7 +1865,7 @@
   },
   {
     "issue_id": 153366,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Membership test (`in`) on list of symbolic integers",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1873,7 +1873,7 @@
   },
   {
     "issue_id": 153372,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dynamo emits dict.__getitem__ call instead of BINARY_SUBSCR for dict access",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1881,7 +1881,7 @@
   },
   {
     "issue_id": 153476,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Tracing into library code calling unsupported set.symmetric_difference",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1889,7 +1889,7 @@
   },
   {
     "issue_id": 153530,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "dict containment check triggering non-deterministic speculation restart",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1897,7 +1897,7 @@
   },
   {
     "issue_id": 153552,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "In-place set operators (isub/ixor/iand/ior) via operator module",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -1905,7 +1905,7 @@
   },
   {
     "issue_id": 153605,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "accessing non-existent attribute on torch module inside try-except",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -1913,7 +1913,7 @@
   },
   {
     "issue_id": 153607,
-    "trigger_type": "script_object",
+    "modeled_entity": "script_object",
     "trigger_description": "Accessing torch.jit.script-decorated static method on user-defined class",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1921,7 +1921,7 @@
   },
   {
     "issue_id": 153617,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Dict keys guard serialization triggers non-deterministic speculation restart",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1929,7 +1929,7 @@
   },
   {
     "issue_id": 153642,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "Using torch.distributed send/recv inside compiled function",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1937,7 +1937,7 @@
   },
   {
     "issue_id": 153646,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "FX pass intermediate logs sharing same logging artifact as final graph",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -1945,7 +1945,7 @@
   },
   {
     "issue_id": 153701,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Using `del` on local variables across graph breaks",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -1953,7 +1953,7 @@
   },
   {
     "issue_id": 153852,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Complex constant with signed zero round-trips through FX codegen repr",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -1961,7 +1961,7 @@
   },
   {
     "issue_id": 153923,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "mark_unbacked tensor dimension with torch._check equality constraint",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1969,7 +1969,7 @@
   },
   {
     "issue_id": 154009,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Nested frozen dataclass instance used as dataclass field default",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -1977,7 +1977,7 @@
   },
   {
     "issue_id": 154036,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "functools.wraps copies Dynamo metadata onto functorch transform wrappers",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -1985,7 +1985,7 @@
   },
   {
     "issue_id": 154090,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Serializing guards for deterministic algorithms mode state",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -1993,7 +1993,7 @@
   },
   {
     "issue_id": 154195,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "rms_norm decomposition emits in-place aten op in functional graph",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2001,7 +2001,7 @@
   },
   {
     "issue_id": 154365,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Calling torch.library.wrap_triton inside compiled function",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2009,7 +2009,7 @@
   },
   {
     "issue_id": 154432,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Concatenating torch.Size subclass of tuple with plain tuple via + operator",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2017,7 +2017,7 @@
   },
   {
     "issue_id": 154490,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Accessing changing int attribute on user-defined object for custom op",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -2025,7 +2025,7 @@
   },
   {
     "issue_id": 154614,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Calling as_subclass with tensor subclass class as argument",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2033,7 +2033,7 @@
   },
   {
     "issue_id": 154707,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Changing torch.compile backend between invocations of same function",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -2041,7 +2041,7 @@
   },
   {
     "issue_id": 154721,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Calling Tensor.split method with meta device tensors in strict export",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2049,7 +2049,7 @@
   },
   {
     "issue_id": 154820,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "In-place mutation on saved tensor in autograd Function forward and backward",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -2057,7 +2057,7 @@
   },
   {
     "issue_id": 155057,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Clearing dynamo cache then recompiling and running same function",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2065,7 +2065,7 @@
   },
   {
     "issue_id": 155174,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "list __setitem__ with symbolic integer index",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2073,7 +2073,7 @@
   },
   {
     "issue_id": 155246,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Generator expression referencing mutated list inside list.extend",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -2081,7 +2081,7 @@
   },
   {
     "issue_id": 155247,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "NLLLoss decomposition mishandles 1D tensor input shape",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2089,7 +2089,7 @@
   },
   {
     "issue_id": 155331,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Calling torch.compile inside TorchDispatchMode.__torch_dispatch__ handler",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2097,7 +2097,7 @@
   },
   {
     "issue_id": 155352,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "calling functools.lru_cache-wrapped function inside torch.compile",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -2105,7 +2105,7 @@
   },
   {
     "issue_id": 155426,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Returning list from make_fx-exported module triggers pytree immutable list unflatten",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2113,7 +2113,7 @@
   },
   {
     "issue_id": 155617,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Iterating weakref internal registry dict that mutates during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2121,7 +2121,7 @@
   },
   {
     "issue_id": 155841,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Decorating a class method with @functools.lru_cache",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2129,7 +2129,7 @@
   },
   {
     "issue_id": 155898,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Passing additional kwarg to sdpa_kernel context manager",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2137,7 +2137,7 @@
   },
   {
     "issue_id": 156054,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "Tensor-parallel hooks on nn.Linear add excessive closure/device_mesh guards",
     "root_cause_category": "Guard Correctness",
     "symptom": "timeout",
@@ -2145,7 +2145,7 @@
   },
   {
     "issue_id": 156135,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Calling .item() on tensor constructed inside compiled region",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2153,7 +2153,7 @@
   },
   {
     "issue_id": 156246,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Non-deterministic speculation restart during guard serialization test tracing",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2161,7 +2161,7 @@
   },
   {
     "issue_id": 156264,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "LOAD_DEREF argval corrupted by test repro message during bytecode transformation",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2169,7 +2169,7 @@
   },
   {
     "issue_id": 156570,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Non-deterministic codegen for tensor comparison operator vs method form",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2177,7 +2177,7 @@
   },
   {
     "issue_id": 156579,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Complex conjugate tensor addition triggers non-deterministic compilation",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -2185,7 +2185,7 @@
   },
   {
     "issue_id": 156580,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Dead code elimination of random tensor operations affecting RNG state",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2193,7 +2193,7 @@
   },
   {
     "issue_id": 156595,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Python 3.14 CPython C-API changes break dynamo build",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2201,7 +2201,7 @@
   },
   {
     "issue_id": 156597,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "tensor add/sub with alpha and out= parameter",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2209,7 +2209,7 @@
   },
   {
     "issue_id": 156598,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "torch.randn without explicit device inside compiled nn.Module on GPU",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2217,7 +2217,7 @@
   },
   {
     "issue_id": 156629,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "CPU-only custom op invoked on CUDA tensor after graph break",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2225,7 +2225,7 @@
   },
   {
     "issue_id": 156641,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Triton compilation attempted on unsupported old GPU hardware",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2233,7 +2233,7 @@
   },
   {
     "issue_id": 156649,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "Calling torch.randint_like on DTensor subclass under compile",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2241,7 +2241,7 @@
   },
   {
     "issue_id": 156678,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Inductor Triton backend invoked on unsupported old GPU hardware",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2249,7 +2249,7 @@
   },
   {
     "issue_id": 156679,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Relative import of module-level tensor with leaked default device",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2257,7 +2257,7 @@
   },
   {
     "issue_id": 156691,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Module-level CPU tensor conflicts with leaked default device state",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2265,7 +2265,7 @@
   },
   {
     "issue_id": 156716,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Applying @contextlib.contextmanager decorator to non-generator function",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2273,7 +2273,7 @@
   },
   {
     "issue_id": 156720,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Passing list of scalar tensors as shape argument to view",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2281,7 +2281,7 @@
   },
   {
     "issue_id": 156722,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Passing tensor where custom op expects float scalar parameter",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2289,7 +2289,7 @@
   },
   {
     "issue_id": 156724,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Dynamic shape operator inside torch.cond branch function",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2297,7 +2297,7 @@
   },
   {
     "issue_id": 156736,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Bitwise operator precedence in printed/decompiled graph representation",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2305,7 +2305,7 @@
   },
   {
     "issue_id": 156776,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Using dataclass as attribute inside nn.Module",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2313,7 +2313,7 @@
   },
   {
     "issue_id": 156799,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "dataclass __init__ with default_factory taking inputs",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2321,7 +2321,7 @@
   },
   {
     "issue_id": 156817,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Inductor Triton backend invoked on unsupported old GPU",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2329,7 +2329,7 @@
   },
   {
     "issue_id": 156921,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Compiled autograd attribution events non-deterministically emitted in structured trace",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2337,7 +2337,7 @@
   },
   {
     "issue_id": 157273,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Method decorated with functools.lru_cache on compiled object",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2345,7 +2345,7 @@
   },
   {
     "issue_id": 157352,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling untraced builtin `time.time` during model forward",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2353,7 +2353,7 @@
   },
   {
     "issue_id": 157397,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "nonstrict_trace'd function returning a non-Tensor constant",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2361,7 +2361,7 @@
   },
   {
     "issue_id": 157399,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "defining @disable-decorated function inside compiled function triggers graph break",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2369,7 +2369,7 @@
   },
   {
     "issue_id": 157417,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "lru_cache hashing SymInt symbolic tensor dimensions",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2377,7 +2377,7 @@
   },
   {
     "issue_id": 157451,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Incorrect version comparison for third-party library compatibility",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2385,7 +2385,7 @@
   },
   {
     "issue_id": 157452,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Constructing nn.Parameter inside compiled region",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2393,7 +2393,7 @@
   },
   {
     "issue_id": 157569,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "numpy advanced indexing with non-contiguous advanced indices in compiled function",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2401,7 +2401,7 @@
   },
   {
     "issue_id": 157720,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Calling numpy ndarray.astype with unsupported object dtype 'O'",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2409,7 +2409,7 @@
   },
   {
     "issue_id": 157729,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Calling torch.quantize_per_tensor with tensor scale/zero_point arguments",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2417,7 +2417,7 @@
   },
   {
     "issue_id": 157945,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Slicing a named tuple returned by torch.linalg.svd",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2425,7 +2425,7 @@
   },
   {
     "issue_id": 157973,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Constructing torch.tensor from NumPy 2.0 numpy.bool_ scalar",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2433,7 +2433,7 @@
   },
   {
     "issue_id": 157992,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Frozen dataclass attribute with specialized int triggers missing guard source",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2441,7 +2441,7 @@
   },
   {
     "issue_id": 158058,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Implicit tensor-to-scalar conversion in torch.arange arguments",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2449,7 +2449,7 @@
   },
   {
     "issue_id": 158120,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Module-level tensor operation triggers __torch_function__ during circular import",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2457,7 +2457,7 @@
   },
   {
     "issue_id": 158164,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "sys.monitoring callback fires during Dynamo frame tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2465,7 +2465,7 @@
   },
   {
     "issue_id": 158447,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Documentation references non-existent SourceBuilder class name",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -2473,7 +2473,7 @@
   },
   {
     "issue_id": 158455,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Directly compiling a skipfile torch function as top-level callable",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -2481,7 +2481,7 @@
   },
   {
     "issue_id": 158642,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Calling Tensor.item() inside fullgraph=True compiled code",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2489,7 +2489,7 @@
   },
   {
     "issue_id": 158772,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Calling _replace method on a NamedTuple instance",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2497,7 +2497,7 @@
   },
   {
     "issue_id": 158910,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Dynamo retains references preventing library object garbage collection",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -2505,7 +2505,7 @@
   },
   {
     "issue_id": 159041,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Tensor factory function not dispatched through torch_function mode",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2513,7 +2513,7 @@
   },
   {
     "issue_id": 159112,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Stale global state serializes builtin function as triton kernel",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "timeout",
@@ -2521,7 +2521,7 @@
   },
   {
     "issue_id": 159133,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Cross-device tensor operation during FakeTensor symbolic tracing",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2529,7 +2529,7 @@
   },
   {
     "issue_id": 159139,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "bool() on compiled empty ModuleList missing __len__ delegation",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2537,7 +2537,7 @@
   },
   {
     "issue_id": 159258,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Accessing weakref.proxy object stored as nn.Module attribute",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2545,7 +2545,7 @@
   },
   {
     "issue_id": 159372,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Calling decorated function assigned as user-defined object attribute",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2553,7 +2553,7 @@
   },
   {
     "issue_id": 159424,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "hashing and attribute access on frozen dataclass instance",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2561,7 +2561,7 @@
   },
   {
     "issue_id": 159460,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Shadowing nn.Module.parameters() method with None attribute",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2569,7 +2569,7 @@
   },
   {
     "issue_id": 159471,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Autograd undefined-grads warning mode interaction with dynamo compilation",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -2577,7 +2577,7 @@
   },
   {
     "issue_id": 159590,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "DTensor with requires_grad enters dynamo-disabled function during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2585,7 +2585,7 @@
   },
   {
     "issue_id": 159709,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "DTensor subclass decomposition produces untracked symbolic stride expressions with dynamic shapes",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2593,7 +2593,7 @@
   },
   {
     "issue_id": 159958,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "calling delattr on nn.Module in forward hook",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2601,7 +2601,7 @@
   },
   {
     "issue_id": 160050,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Re-tracing exported model with nested list outputs and dynamic shapes",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2609,7 +2609,7 @@
   },
   {
     "issue_id": 160077,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "tensor method invoked inside torch.device TorchFunctionMode context",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2617,7 +2617,7 @@
   },
   {
     "issue_id": 160241,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "eval-mode dropout result assigned back to module attribute via setattr",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2625,7 +2625,7 @@
   },
   {
     "issue_id": 160290,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Sorting small lists under dynamo compilation",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2633,7 +2633,7 @@
   },
   {
     "issue_id": 160437,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Conditional graph break leaves empty pre-break graph segment",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -2641,7 +2641,7 @@
   },
   {
     "issue_id": 160471,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "EXTENDED_ARG opcodes carrying starts_line stripped without preserving metadata",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -2649,7 +2649,7 @@
   },
   {
     "issue_id": 160525,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Returning user-defined object with attributes from nested_compile_region",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -2657,7 +2657,7 @@
   },
   {
     "issue_id": 160691,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Context manager generator calls torch op returning non-Tensor value",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2665,7 +2665,7 @@
   },
   {
     "issue_id": 160751,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "torch.cuda.synchronize() call treated as dead code in AOT",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -2673,7 +2673,7 @@
   },
   {
     "issue_id": 160752,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "jacfwd higher-order op with one_hot under dynamic shapes",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2681,7 +2681,7 @@
   },
   {
     "issue_id": 160886,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Subclassing Parameter and using it in arithmetic operations",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2689,7 +2689,7 @@
   },
   {
     "issue_id": 160901,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Tensor.__setitem__ fails to propagate requires_grad on FakeTensor",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2697,7 +2697,7 @@
   },
   {
     "issue_id": 161010,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Comparing strides of tensor cloned with preserve_format during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -2705,7 +2705,7 @@
   },
   {
     "issue_id": 161120,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Instantiating user-defined class overriding tensor default arguments",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2713,7 +2713,7 @@
   },
   {
     "issue_id": 161188,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Graph break inside TorchFunctionMode produces empty graph segment",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2721,7 +2721,7 @@
   },
   {
     "issue_id": 161189,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "TorchFunctionMode context manager not restored after exception",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -2729,7 +2729,7 @@
   },
   {
     "issue_id": 161191,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "nn.Parameter construction inside torch.inference_mode ignores requires_grad",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2737,7 +2737,7 @@
   },
   {
     "issue_id": 161207,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Calling `nn.Module.to()` inside forward invokes non-Tensor-returning torch op",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2745,7 +2745,7 @@
   },
   {
     "issue_id": 161211,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Calling torch backend availability predicates not in constant-fold allowlist",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2753,7 +2753,7 @@
   },
   {
     "issue_id": 161275,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Inplace tensor ops fail to propagate requires_grad metadata during tracing",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -2761,7 +2761,7 @@
   },
   {
     "issue_id": 161372,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Mutating integer attribute on nn.Module across forward calls",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -2769,7 +2769,7 @@
   },
   {
     "issue_id": 161505,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Creating new MutableMapping subclass instance during tracing",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -2777,7 +2777,7 @@
   },
   {
     "issue_id": 161513,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "@staticmethod on nn.Module inside dynamo-wrapped test in Python 3.10",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2785,7 +2785,7 @@
   },
   {
     "issue_id": 161542,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Variable used as both local and cell with graph break",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2793,7 +2793,7 @@
   },
   {
     "issue_id": 161562,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Defining a class inside a compiled function triggers unsupported bytecode",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -2801,7 +2801,7 @@
   },
   {
     "issue_id": 161580,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Dynamic batch size FX graph subprocess execution exceeds timeout",
     "root_cause_category": "Guard Correctness",
     "symptom": "timeout",
@@ -2809,7 +2809,7 @@
   },
   {
     "issue_id": 161610,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Setting dynamic attribute on mutable NamedTuple subclass",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -2817,7 +2817,7 @@
   },
   {
     "issue_id": 161790,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Active TorchDispatchMode causes silent frame skip under fullgraph=True",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -2825,7 +2825,7 @@
   },
   {
     "issue_id": 161830,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Graph break at bytecode offset with incomplete block target remapping",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2833,7 +2833,7 @@
   },
   {
     "issue_id": 161831,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "mark_dynamic on mismatched tensor shapes causes symbolic error",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2841,7 +2841,7 @@
   },
   {
     "issue_id": 161889,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Active TorchDispatchMode causes Dynamo to skip frame tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -2849,7 +2849,7 @@
   },
   {
     "issue_id": 161909,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Stale global state serializes builtin function as triton kernel",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "timeout",
@@ -2857,7 +2857,7 @@
   },
   {
     "issue_id": 161923,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Compiled selective activation checkpointing leaks CUDA memory intermittently",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -2865,7 +2865,7 @@
   },
   {
     "issue_id": 161993,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Graph break GB0007 workaround documentation is incorrect",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -2873,7 +2873,7 @@
   },
   {
     "issue_id": 162120,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Compiled selective activation checkpointing leaks CUDA memory intermittently",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -2881,7 +2881,7 @@
   },
   {
     "issue_id": 162174,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "In-place requires_grad_ mutation bypasses dict-tag-based guard skip",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -2889,7 +2889,7 @@
   },
   {
     "issue_id": 162230,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Running exported FX graph with scalar multiply as subprocess",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "timeout",
@@ -2897,7 +2897,7 @@
   },
   {
     "issue_id": 162231,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Global kernel_side_table polluted with builtin function from prior test",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "timeout",
@@ -2905,7 +2905,7 @@
   },
   {
     "issue_id": 162313,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "graph break inside conditional context manager branches triggers resume KeyError",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2913,7 +2913,7 @@
   },
   {
     "issue_id": 162374,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "pad_packed_sequence missing from Dynamo skip list after graph break",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2921,7 +2921,7 @@
   },
   {
     "issue_id": 162483,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "Using dist.broadcast in compiled distributed code",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "timeout",
@@ -2929,7 +2929,7 @@
   },
   {
     "issue_id": 162522,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Setting deterministic algorithms mode inside compiled function",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -2937,7 +2937,7 @@
   },
   {
     "issue_id": 162554,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Global kernel_side_table polluted by prior test with builtin function",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "timeout",
@@ -2945,7 +2945,7 @@
   },
   {
     "issue_id": 162624,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "TorchFunctionMode context spanning __build_class__ graph break",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2953,7 +2953,7 @@
   },
   {
     "issue_id": 162677,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "TorchFunctionMode intercepts .size() call during compilation telemetry",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2961,7 +2961,7 @@
   },
   {
     "issue_id": 162727,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Using Enum type in isinstance check and as keyword argument",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -2969,7 +2969,7 @@
   },
   {
     "issue_id": 162793,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "Guard serialization on FSDP distributed module causes hang",
     "root_cause_category": "Guard Correctness",
     "symptom": "timeout",
@@ -2977,7 +2977,7 @@
   },
   {
     "issue_id": 162817,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "view_copy on broadcasted (expanded) tensor in FakeTensor mode",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -2985,7 +2985,7 @@
   },
   {
     "issue_id": 162832,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "toggling error/resume graph break behavior via context manager",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -2993,7 +2993,7 @@
   },
   {
     "issue_id": 162835,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "calling next() builtin with a default value argument",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3001,7 +3001,7 @@
   },
   {
     "issue_id": 162852,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Calling constant string method with incorrect argument arity",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3009,7 +3009,7 @@
   },
   {
     "issue_id": 162857,
-    "trigger_type": "lazy",
+    "modeled_entity": "lazy",
     "trigger_description": "VariableTrackers missing originating bytecode source location metadata",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3017,7 +3017,7 @@
   },
   {
     "issue_id": 162858,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "graph break log message lacks bytecode trace context",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -3025,7 +3025,7 @@
   },
   {
     "issue_id": 162860,
-    "trigger_type": "lazy",
+    "modeled_entity": "lazy",
     "trigger_description": "LazyVariableTracker repr omits type and realization state in logs",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3033,7 +3033,7 @@
   },
   {
     "issue_id": 163064,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Moving compiled module to different device then recompiling and calling",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3041,7 +3041,7 @@
   },
   {
     "issue_id": 163066,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Including CPython private headers exports duplicate opcode symbols",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3049,7 +3049,7 @@
   },
   {
     "issue_id": 163253,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Slicing a named tuple return type produces wrong type",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3057,7 +3057,7 @@
   },
   {
     "issue_id": 163321,
-    "trigger_type": "lazy",
+    "modeled_entity": "lazy",
     "trigger_description": "Unrealized lazy variable used as dictionary key during construction",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3065,7 +3065,7 @@
   },
   {
     "issue_id": 163329,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Sharing compiled function across repeated NN module blocks with distinct sub-module instances",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3073,7 +3073,7 @@
   },
   {
     "issue_id": 163457,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling builtin divmod() on SymInt in dynamic shape decomposition",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3081,7 +3081,7 @@
   },
   {
     "issue_id": 163496,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Hitting recompilation limit displays outdated documentation URL",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3089,7 +3089,7 @@
   },
   {
     "issue_id": 163500,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "fail_on_recompile error omits guard failure reason",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3097,7 +3097,7 @@
   },
   {
     "issue_id": 163594,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "Compiling DTensor redistribute operation causes subprocess hang",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "timeout",
@@ -3105,7 +3105,7 @@
   },
   {
     "issue_id": 163595,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Subprocess execution of serialized FX graph exceeds timeout",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "timeout",
@@ -3113,7 +3113,7 @@
   },
   {
     "issue_id": 163668,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Passing lambda as callable argument to torch._check",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3121,7 +3121,7 @@
   },
   {
     "issue_id": 164119,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "TorchDispatchMode with is_infra_mode causes spurious guard failures",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3129,7 +3129,7 @@
   },
   {
     "issue_id": 164247,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "id() builtin called on nested user-defined function via inspect.signature",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3137,7 +3137,7 @@
   },
   {
     "issue_id": 164300,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Passing functools.partial-wrapped function as checkpoint context_fn argument",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3145,7 +3145,7 @@
   },
   {
     "issue_id": 164425,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Global kernel side table retains builtin function across tests",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "timeout",
@@ -3153,7 +3153,7 @@
   },
   {
     "issue_id": 164462,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Global config state alters pre-grad pass ordering nondeterministically",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3161,7 +3161,7 @@
   },
   {
     "issue_id": 164608,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Reusing compiled functools.partial with changed bound tensor arguments",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3169,7 +3169,7 @@
   },
   {
     "issue_id": 164760,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Tensor __eq__ with class sentinel triggers __torch_function__ tracing",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3177,7 +3177,7 @@
   },
   {
     "issue_id": 164823,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Performing operations on sparse tensors produced by to_sparse()",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -3185,7 +3185,7 @@
   },
   {
     "issue_id": 164875,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Adding two zero-dim-strided tensors with dynamic symbolic shapes",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3193,7 +3193,7 @@
   },
   {
     "issue_id": 164971,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Mutations during strict-export lack source location stack traces",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -3201,7 +3201,7 @@
   },
   {
     "issue_id": 164972,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling C-extension optree library functions during Dynamo tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3209,7 +3209,7 @@
   },
   {
     "issue_id": 164990,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Non-deterministic value (e.g., datetime.now()) specialized in guard",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3217,7 +3217,7 @@
   },
   {
     "issue_id": 165034,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "DTensor sharding propagation guards on unbacked symbolic shape",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3225,7 +3225,7 @@
   },
   {
     "issue_id": 165051,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Passing Parameter then plain Tensor to same compiled function",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3233,7 +3233,7 @@
   },
   {
     "issue_id": 165215,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "Calling DeviceMesh method with keyword arguments inside compile",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3241,7 +3241,7 @@
   },
   {
     "issue_id": 165408,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Comparing data_ptr() return values with equality operator",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3249,7 +3249,7 @@
   },
   {
     "issue_id": 165778,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Selective activation checkpointing compiled without functionalization leaks CUDA memory",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -3257,7 +3257,7 @@
   },
   {
     "issue_id": 165901,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling `object()` constructor to create sentinel value during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3265,7 +3265,7 @@
   },
   {
     "issue_id": 165988,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "Type mismatch across distributed ranks causes inconsistent compilation counts",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -3273,7 +3273,7 @@
   },
   {
     "issue_id": 166033,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Graph break before conditional branch containing context manager with-block",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -3281,7 +3281,7 @@
   },
   {
     "issue_id": 166173,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Mutating Python containers in compiled code needing side-effect visibility",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -3289,7 +3289,7 @@
   },
   {
     "issue_id": 166176,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Graph break inside nested context managers triggers resume codegen failure",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -3297,7 +3297,7 @@
   },
   {
     "issue_id": 166238,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Constructing defaultdict with default_factory and data arguments",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3305,7 +3305,7 @@
   },
   {
     "issue_id": 166267,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Calling autocast enter/exit helpers directly instead of as context manager",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3313,7 +3313,7 @@
   },
   {
     "issue_id": 166268,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Global state guard logging omits captured state values",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3321,7 +3321,7 @@
   },
   {
     "issue_id": 166460,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Slicing tensor with data-dependent index from tensor.tolist()",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3329,7 +3329,7 @@
   },
   {
     "issue_id": 166484,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Global kernel_side_table retains stale builtin entry across tests",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "timeout",
@@ -3337,7 +3337,7 @@
   },
   {
     "issue_id": 166555,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "eager code errors silently causing graph breaks",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -3345,7 +3345,7 @@
   },
   {
     "issue_id": 166589,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Graph break with non-empty checkpoint bypasses error_on_graph_break context check",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -3353,7 +3353,7 @@
   },
   {
     "issue_id": 166617,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Non-deterministic op count in compiled graph across runs",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3361,7 +3361,7 @@
   },
   {
     "issue_id": 166623,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Calling share_memory_() on tensor during graph tracing",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3369,7 +3369,7 @@
   },
   {
     "issue_id": 166626,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "In-place addition between CPU tensor and meta-device tensor",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3377,7 +3377,7 @@
   },
   {
     "issue_id": 166637,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Graph break resume introduces weakrefs to tensor parameters",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -3385,7 +3385,7 @@
   },
   {
     "issue_id": 166642,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "getattr with default fallback on tensor attribute",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3393,7 +3393,7 @@
   },
   {
     "issue_id": 166644,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Embedding lookup with mixed cpu/meta device tensors",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3401,7 +3401,7 @@
   },
   {
     "issue_id": 166683,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Accessing tensor data_ptr in custom op backward with dynamic shapes",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3409,7 +3409,7 @@
   },
   {
     "issue_id": 166721,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Recursive closure in codegen captures self, creating reference cycle retaining tensors",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -3417,7 +3417,7 @@
   },
   {
     "issue_id": 166900,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Assigning dict with pytree-registered constant to external object attribute",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -3425,7 +3425,7 @@
   },
   {
     "issue_id": 166926,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Automatic dynamic shapes recompilation shadows static graph via LRU cache",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3433,7 +3433,7 @@
   },
   {
     "issue_id": 166934,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Global kernel_side_table polluted by unreset builtin function entry",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "timeout",
@@ -3441,7 +3441,7 @@
   },
   {
     "issue_id": 166943,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Mutating outer-scope variable inside torch.cond branch",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -3449,7 +3449,7 @@
   },
   {
     "issue_id": 167009,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Forward pre-hook graph break prevents child module forward compilation",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -3457,7 +3457,7 @@
   },
   {
     "issue_id": 167142,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Raising custom exception instead of graph break or RuntimeError",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -3465,7 +3465,7 @@
   },
   {
     "issue_id": 167266,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling builtin bool() on a tensor value",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3473,7 +3473,7 @@
   },
   {
     "issue_id": 167269,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Calling @forbid_in_graph-decorated dynamo utility inside compiled code",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3481,7 +3481,7 @@
   },
   {
     "issue_id": 167275,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Using nn.GRU/RNN/LSTM module in compiled model",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3489,7 +3489,7 @@
   },
   {
     "issue_id": 167276,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling builtin print with f-string containing tensor expressions",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3497,7 +3497,7 @@
   },
   {
     "issue_id": 167369,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Calling builtin repr() on a user-defined object instance",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3505,7 +3505,7 @@
   },
   {
     "issue_id": 167393,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Calling same function containing graph_break from different call sites",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -3513,7 +3513,7 @@
   },
   {
     "issue_id": 167400,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Patching nn.Module forward via instance setattr inside compiled region",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -3521,7 +3521,7 @@
   },
   {
     "issue_id": 167416,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "GLOBAL_STATE guards added after guard_filter_fn execution",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3529,7 +3529,7 @@
   },
   {
     "issue_id": 167453,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Compiling same function with different custom backend instances triggers unreported recompilation",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3537,7 +3537,7 @@
   },
   {
     "issue_id": 167504,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Redefining class inside loop creates new type IDs each iteration",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3545,7 +3545,7 @@
   },
   {
     "issue_id": 167566,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "type_id guard failure logs show opaque IDs not type names",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3553,7 +3553,7 @@
   },
   {
     "issue_id": 167635,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "Calling as_subclass with custom tensor subclass in overridden method",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3561,7 +3561,7 @@
   },
   {
     "issue_id": 167678,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Overly broad VariableTracker type annotations for function parameters",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3569,7 +3569,7 @@
   },
   {
     "issue_id": 167789,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Deep recursion of user function under torch.compile",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3577,7 +3577,7 @@
   },
   {
     "issue_id": 167796,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Redundant subclasses duplicating Python type info as hardcoded strings",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3585,7 +3585,7 @@
   },
   {
     "issue_id": 167812,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Debug log graph code formatting hardcodes colored=True for file output",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3593,7 +3593,7 @@
   },
   {
     "issue_id": 167898,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Guard recompile reasons lack full user stack trace context",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3601,7 +3601,7 @@
   },
   {
     "issue_id": 167900,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Exception raised inside context manager or try/except loses traceback origin",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3609,7 +3609,7 @@
   },
   {
     "issue_id": 167927,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "calling torch.compiler.disable-decorated function inside fullgraph=True compilation",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -3617,7 +3617,7 @@
   },
   {
     "issue_id": 167956,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Using user-defined object instance as dictionary key",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3625,7 +3625,7 @@
   },
   {
     "issue_id": 167982,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "hasattr call returns overly broad type annotation",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3633,7 +3633,7 @@
   },
   {
     "issue_id": 167991,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Calling functools.lru_cache-wrapped function in compiled code",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3641,7 +3641,7 @@
   },
   {
     "issue_id": 168103,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Side-effect replay indiscriminately mutates global state during retracing",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -3649,7 +3649,7 @@
   },
   {
     "issue_id": 168118,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Deeply nested list access causes quadratic guard name computation",
     "root_cause_category": "Guard Correctness",
     "symptom": "timeout",
@@ -3657,7 +3657,7 @@
   },
   {
     "issue_id": 168160,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Type ID guards display opaque numeric IDs without type names",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3665,7 +3665,7 @@
   },
   {
     "issue_id": 168163,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "OrderedSet closed over via functools.partial in checkpoint policy",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3673,7 +3673,7 @@
   },
   {
     "issue_id": 168206,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Mutating global variable inside activation checkpoint higher-order operator",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -3681,7 +3681,7 @@
   },
   {
     "issue_id": 168245,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "getattr with default on tensor attribute lookup",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3689,7 +3689,7 @@
   },
   {
     "issue_id": 168284,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Compiling a built-in torch op directly as top-level callable",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3697,7 +3697,7 @@
   },
   {
     "issue_id": 168291,
-    "trigger_type": "constant",
+    "modeled_entity": "constant",
     "trigger_description": "Wrapping exception message strings in ConstantVariable unnecessarily",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3705,7 +3705,7 @@
   },
   {
     "issue_id": 168317,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Logging function arguments mutated after call, reordered to post-graph",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -3713,7 +3713,7 @@
   },
   {
     "issue_id": 168360,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "DTensor operations captured as closures hiding closed-over variables",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3721,7 +3721,7 @@
   },
   {
     "issue_id": 168373,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Fresh backend callable created on each torch.compile invocation",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3729,7 +3729,7 @@
   },
   {
     "issue_id": 168379,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Non-deterministic ordering of C++ guard tree log output",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3737,7 +3737,7 @@
   },
   {
     "issue_id": 168392,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Returning dataclass from nonstrict_trace decorated function",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3745,7 +3745,7 @@
   },
   {
     "issue_id": 168538,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "ROCm autotuning produces different callback trigger count",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3753,7 +3753,7 @@
   },
   {
     "issue_id": 168540,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Flash attention backward with non-contiguous/mixed-stride tensors",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3761,7 +3761,7 @@
   },
   {
     "issue_id": 168541,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Flash attention backward meta returns wrong tensor strides",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3769,7 +3769,7 @@
   },
   {
     "issue_id": 168542,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Wrapping Inductor-compiled regions on ROCm GPU backend",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -3777,7 +3777,7 @@
   },
   {
     "issue_id": 168890,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Returning a registered dataclass pytree from nonstrict_trace function",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3785,7 +3785,7 @@
   },
   {
     "issue_id": 168954,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Indexing torch.Size with a tensor instead of integer",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3793,7 +3793,7 @@
   },
   {
     "issue_id": 168994,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Comparing return value of reorderable logging function with None",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3801,7 +3801,7 @@
   },
   {
     "issue_id": 169010,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Using functools.partial object as dictionary key",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3809,7 +3809,7 @@
   },
   {
     "issue_id": 169060,
-    "trigger_type": "builtin",
+    "modeled_entity": "builtin",
     "trigger_description": "Global mutable set conditionally gates call to unsupported `warnings.warn`",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3817,7 +3817,7 @@
   },
   {
     "issue_id": 169112,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Calling unsupported torch._C built-in function during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3825,7 +3825,7 @@
   },
   {
     "issue_id": 169120,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Context manager inside higher-order op forces unnecessary graph break",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3833,7 +3833,7 @@
   },
   {
     "issue_id": 169179,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Sliced tensor assignment failing to propagate requires_grad metadata",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3841,7 +3841,7 @@
   },
   {
     "issue_id": 169253,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Appending to class-level list attribute in compiled method",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -3849,7 +3849,7 @@
   },
   {
     "issue_id": 169402,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Skip decorator incorrectly blocks cpython test suite execution",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3857,7 +3857,7 @@
   },
   {
     "issue_id": 169489,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Frozen dataclass pytree in checkpoint higher-order op subgraph",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3865,7 +3865,7 @@
   },
   {
     "issue_id": 169578,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Deprecated config flags still referenced in recompilation code paths",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3873,7 +3873,7 @@
   },
   {
     "issue_id": 169598,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Detecting side effects during fullgraph=True compilation",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -3881,7 +3881,7 @@
   },
   {
     "issue_id": 169616,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Passing nn.Module as argument to nonstrict_trace decorated function",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3889,7 +3889,7 @@
   },
   {
     "issue_id": 169634,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Multiplying Python scalar with 0-d tensor triggers implicit .item() specialization",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3897,7 +3897,7 @@
   },
   {
     "issue_id": 169722,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "Mutating global mutable objects inside compiled function",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "inconsistency",
@@ -3905,7 +3905,7 @@
   },
   {
     "issue_id": 169778,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "torch.cond subgraph outputs padded by Inductor causing stride mismatch",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3913,7 +3913,7 @@
   },
   {
     "issue_id": 169783,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Nested custom autograd.Function calls inside torch.func.grad",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3921,7 +3921,7 @@
   },
   {
     "issue_id": 169825,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Passing nn.Module instance to DynamoCache expecting __qualname__",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3929,7 +3929,7 @@
   },
   {
     "issue_id": 169835,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Accessing deprecated config options silently without warning",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3937,7 +3937,7 @@
   },
   {
     "issue_id": 169854,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "CPython tests in dynamo folder require conflicting test paradigm",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -3945,7 +3945,7 @@
   },
   {
     "issue_id": 169977,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Scalar constant input to torch.bucketize decomposition in fake tensor mode",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3953,7 +3953,7 @@
   },
   {
     "issue_id": 169995,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "nn.Module containment check in WeakKeyDictionary during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -3961,7 +3961,7 @@
   },
   {
     "issue_id": 170047,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Python 3.11 bytecode differences alter traced IR node count",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -3969,7 +3969,7 @@
   },
   {
     "issue_id": 170079,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Dynamic importlib.import_module call in deterministic-mode code path",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -3977,7 +3977,7 @@
   },
   {
     "issue_id": 170110,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Registering forward hook with kwargs on a compiled submodule",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -3985,7 +3985,7 @@
   },
   {
     "issue_id": 170123,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Different CUDA device indices cause FX graph hash mismatch",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -3993,7 +3993,7 @@
   },
   {
     "issue_id": 170242,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "Graph break inside higher-order op loses error context via SkipFrame",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -4001,7 +4001,7 @@
   },
   {
     "issue_id": 170429,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Registering mixed-type (function + bound method) forward_pre_hooks on nn.Module",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -4009,7 +4009,7 @@
   },
   {
     "issue_id": 170484,
-    "trigger_type": "higher_order_ops",
+    "modeled_entity": "higher_order_ops",
     "trigger_description": "passing functools.partial-wrapped callable as FlexAttention mask_fn",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -4017,7 +4017,7 @@
   },
   {
     "issue_id": 170488,
-    "trigger_type": "distributed",
+    "modeled_entity": "distributed",
     "trigger_description": "aot_compile with distributed data parallel model inference",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -4025,7 +4025,7 @@
   },
   {
     "issue_id": 170489,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "functools.partial wrapping local function passed to higher-order op",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -4033,7 +4033,7 @@
   },
   {
     "issue_id": 171093,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "ConvTranspose2d producing zero-size spatial output dimensions",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -4041,7 +4041,7 @@
   },
   {
     "issue_id": 171204,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Accessing .grad attribute on in-graph-constructed nn.Parameter",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -4049,7 +4049,7 @@
   },
   {
     "issue_id": 171309,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Calling @classmethod on user-defined class during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -4057,7 +4057,7 @@
   },
   {
     "issue_id": 171488,
-    "trigger_type": "dicts",
+    "modeled_entity": "dicts",
     "trigger_description": "Compiled function's own side-effect on global dict invalidates guards",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -4065,7 +4065,7 @@
   },
   {
     "issue_id": 171590,
-    "trigger_type": "optimizer",
+    "modeled_entity": "optimizer",
     "trigger_description": "Augmented assignment (`+=`) on optimizer attribute triggers STORE_ATTR",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -4073,7 +4073,7 @@
   },
   {
     "issue_id": 171593,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Float nn.Module attribute used as dict key across recompilations",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -4081,7 +4081,7 @@
   },
   {
     "issue_id": 171664,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Calling share_memory_() on tensor during graph tracing",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -4089,7 +4089,7 @@
   },
   {
     "issue_id": 171822,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Graph break inside inlined list comprehension (Python 3.12+)",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "inconsistency",
@@ -4097,7 +4097,7 @@
   },
   {
     "issue_id": 171853,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Tracing nn.LSTM module under fullgraph=True compilation",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -4105,7 +4105,7 @@
   },
   {
     "issue_id": 171865,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Calling unsupported torch.sparse_csr_tensor in compiled region",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -4113,7 +4113,7 @@
   },
   {
     "issue_id": 172000,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Property setter on user-defined object accessing nested object attributes",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -4121,7 +4121,7 @@
   },
   {
     "issue_id": 172020,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Calling register_hook on intermediate tensor during tracing",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -4129,7 +4129,7 @@
   },
   {
     "issue_id": 172088,
-    "trigger_type": "torch_function",
+    "modeled_entity": "torch_function",
     "trigger_description": "TorchFunctionMode with mutable state active during guard creation",
     "root_cause_category": "Guard Correctness",
     "symptom": "crash",
@@ -4137,7 +4137,7 @@
   },
   {
     "issue_id": 172206,
-    "trigger_type": "torch",
+    "modeled_entity": "torch",
     "trigger_description": "Using torch random generation ops inside compiled model forward",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "inconsistency",
@@ -4145,7 +4145,7 @@
   },
   {
     "issue_id": 172374,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Specializing guards on nested closure cell contents",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -4153,7 +4153,7 @@
   },
   {
     "issue_id": 172382,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "Closure variable change triggers guard with opaque cell index",
     "root_cause_category": "Guard Correctness",
     "symptom": "inconsistency",
@@ -4161,7 +4161,7 @@
   },
   {
     "issue_id": 172732,
-    "trigger_type": "functions",
+    "modeled_entity": "functions",
     "trigger_description": "functools.wraps copies internal Dynamo attribute to outer wrapper function",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "inconsistency",
@@ -4169,7 +4169,7 @@
   },
   {
     "issue_id": 173103,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "assume_constant_result on property getter receiving nn.Module self",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -4177,7 +4177,7 @@
   },
   {
     "issue_id": 173172,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "Accessing `.cuda_stream` attribute on `torch.cuda.current_stream()` in compiled function",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -4185,7 +4185,7 @@
   },
   {
     "issue_id": 173221,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Calling repr on frozen dataclass with deferred attribute initialization",
     "root_cause_category": "Side-Effect Tracking Fidelity",
     "symptom": "crash",
@@ -4193,7 +4193,7 @@
   },
   {
     "issue_id": 173231,
-    "trigger_type": "ctx_manager",
+    "modeled_entity": "ctx_manager",
     "trigger_description": "TypeError during function inlining inside contextmanager body",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -4201,7 +4201,7 @@
   },
   {
     "issue_id": 173240,
-    "trigger_type": "user_defined",
+    "modeled_entity": "user_defined",
     "trigger_description": "Comparing two user-defined class type objects via != operator",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",
@@ -4209,7 +4209,7 @@
   },
   {
     "issue_id": 173384,
-    "trigger_type": "lists",
+    "modeled_entity": "lists",
     "trigger_description": "Creating self-referential list containing reference to itself",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -4217,7 +4217,7 @@
   },
   {
     "issue_id": 173522,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Calling nn.Module with default keyword-only arg in __call__",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -4225,7 +4225,7 @@
   },
   {
     "issue_id": 173759,
-    "trigger_type": "misc",
+    "modeled_entity": "misc",
     "trigger_description": "TORCH_LOGS validated before third-party backend registration during import",
     "root_cause_category": "Semantic Modeling Fidelity-1",
     "symptom": "crash",
@@ -4233,7 +4233,7 @@
   },
   {
     "issue_id": 173915,
-    "trigger_type": "tensor",
+    "modeled_entity": "tensor",
     "trigger_description": "Using tensor `.item()` result in Python conditional branch",
     "root_cause_category": "Graph Break Correctness",
     "symptom": "crash",
@@ -4241,7 +4241,7 @@
   },
   {
     "issue_id": 173924,
-    "trigger_type": "nn_module",
+    "modeled_entity": "nn_module",
     "trigger_description": "Calling children() on nn.Module during compilation",
     "root_cause_category": "Semantic Modeling Fidelity-2",
     "symptom": "crash",

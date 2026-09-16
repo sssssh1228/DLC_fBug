@@ -49,7 +49,7 @@ def summarize_with_llm(issue_info, torch_tax_path, variabletracker_tax_path, sec
 You are an expert in PyTorch TorchDynamo internals.
 Analyze the following TorchDynamo GitHub issue and produce a structured classification.
 
-1. Trigger Type: Select exactly **one** types from the list below that are most relevant to triggering this bug
+1. Modeled Entity: Select exactly **one** types from the list below that are most relevant to triggering this bug
 {variabletracker_taxonomy}
 2. Trigger Description (≤10 words): Describe how a Python language construct or usage pattern triggers the bug
 Keep the description abstract and structural (e.g., "capturing closure variable in loop", "overriding magic method on tuple subclass")
@@ -79,7 +79,7 @@ for this issue:
 
 Expected output:
 {{
-"trigger_type": "...",
+"modeled_entity": "...",
 "trigger_description": "overide a magic function in a module",
 "root_cause_category": "...",
 "symptom": "inconsistency",

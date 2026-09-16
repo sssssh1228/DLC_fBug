@@ -1,0 +1,130 @@
+{
+  "builtin": {
+    "definition": "Includes built-in Python types that are directly supported in PyTorch.",
+    "VariableTracker Class": "BuiltinVariable"
+  },
+  "constant": {
+    "definition": "Represents constant values that do not change during execution.",
+    "VariableTracker Class": ["ConstantVariable", "EnumVariable"]
+  },
+  "ctx_manager": {
+    "definition": "Manages context for operations that require specific settings or states.",
+    "VariableTracker Class": [
+      "AutocastModeVariable",
+      "CUDADeviceVariable",
+      "GradModeVariable",
+      "InferenceModeVariable",
+      "CatchWarningsCtxManagerVariable"
+    ]
+  },
+  "dicts": {
+    "definition": "Represents dictionary-like structures that can store key-value pairs.",
+    "VariableTracker Class": [
+      "ConstDictVariable",
+      "CustomizedDictVariable",
+      "DefaultDictVariable",
+      "DictKeys",
+      "DictValues"
+    ]
+  },
+  "distributed": {
+    "definition": "Represents variables related to distributed computing and parallel processing.",
+    "VariableTracker Class": [
+      "BackwardHookVariable",
+      "DeviceMeshVariable",
+      "DistributedVariable",
+      "ProcessGroupVariable"
+    ]
+  },
+  "functions": {
+    "definition": "Represents user-defined or built-in functions that can be tracked and transformed.",
+    "VariableTracker Class": [
+      "BaseUserFunctionVariable",
+      "NestedUserFunctionVariable",
+      "UserFunctionVariable"
+    ]
+  },
+  "higher_order_ops": {
+    "definition": "Represents operations that take other functions as arguments or return them.",
+    "VariableTracker Class": [
+      "AutogradFunctionApplyVariable",
+      "CheckpointHigherOrderVariable",
+      "WrapWithSetGradEnabledHigherOrderVariable"
+    ]
+  },
+  "iter": {
+    "definition": "Represents iterator types that allow for iteration over collections.",
+    "VariableTracker Class": [
+      "CountIteratorVariable",
+      "CycleIteratorVariable",
+      "IteratorVariable"
+    ]
+  },
+  "lazy": {
+    "definition": "Represents variables that are evaluated lazily, only when needed.",
+    "VariableTracker Class": "LazyVariableTracker"
+  },
+  "lists": {
+    "definition": "Represents list-like structures that can hold multiple elements.",
+    "VariableTracker Class": [
+      "BaseListVariable",
+      "ListVariable",
+      "NamedTupleVariable"
+    ]
+  },
+  "misc": {
+    "definition": "Contains miscellaneous variables that do not fit into other categories.",
+    "VariableTracker Class": [
+      "AutogradEngineVariable",
+      "DebuggingVariable",
+      "ExceptionVariable"
+    ]
+  },
+  "nn_module": {
+    "definition": "Represents neural network modules and their components.",
+    "VariableTracker Class": [
+      "FSDPManagedNNModuleVariable",
+      "NNModuleVariable",
+      "UnspecializedBuiltinNNModuleVariable"
+    ]
+  },
+  "optimizer": {
+    "definition": "Represents variables related to optimization processes in training models.",
+    "VariableTracker Class": "OptimizerVariable"
+  },
+  "script_object": {
+    "definition": "Represents objects that are compiled into TorchScript for execution.",
+    "VariableTracker Class": "TorchScriptObjectVariable"
+  },
+  "sdpa": {
+    "definition": "Represents variables related to the Stochastic Dual Proximal Algorithm (SDPA).",
+    "VariableTracker Class": "SDPAParamsVariable"
+  },
+  "tensor": {
+    "definition": "Represents tensor objects used in computations.",
+    "VariableTracker Class": [
+      "FakeItemVariable",
+      "TensorVariable",
+      "UnspecializedPythonVariable"
+    ]
+  },
+  "torch": {
+    "definition": "Represents core PyTorch functionalities and components.",
+    "VariableTracker Class": "BaseTorchVariable"
+  },
+  "torch_function": {
+    "definition": "Represents variables that override or extend PyTorch functionality via torch.function.",
+    "VariableTracker Class": [
+      "TensorWithTFOverrideVariable",
+      "TorchFunctionModeVariable"
+    ]
+  },
+  "user_defined": {
+    "definition": "Represents user-defined types and structures that can be tracked in PyTorch.",
+    "VariableTracker Class": [
+      "FrozenDataClassVariable",
+      "UserDefinedClassVariable",
+      "UserDefinedVariable"
+    ]
+  }
+}
