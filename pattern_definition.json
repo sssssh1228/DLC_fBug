@@ -121,7 +121,7 @@
         "signature": "A built-in or stdlib iterator/iterable type (list_iterator, dict_valueiterator, dict_itemiterator, enumerate, generator, zip, itertools.count, etc.) is wrapped as UserDefinedObjectVariable instead of a specialized IteratorVariable subclass, causing __iter__ or __next__ calls to hit the unsupported-method path and produce a crash or graph break.",
         "description": "Dynamo lacks a dedicated VariableTracker mapping for certain built-in and stdlib iterator types, so they are represented as generic UserDefinedObjectVariable which has no symbolic implementation of the iterator protocol (__iter__/__next__). Any compiled code that invokes the iterator protocol on these objects triggers an unsupported operation error.",
         "fix_direction": "Register a specialized VariableTracker subclass (or extend an existing one such as IteratorVariable) for each missing iterator type, implementing symbolic __iter__ and __next__ methods that correctly model the iteration semantics.",
-        "parent": null
+        "parent": "Incorrect VariableTracker"
       },
       {
         "name": "ConstantVariable missing Python value protocol",
